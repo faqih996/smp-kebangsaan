@@ -5,3 +5,10 @@
 [x-cloak] {
     display: none;
 }
+
+.gradient-text-hero{
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #ffcc00 0%, #0466c8 100%);
+}
