@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class SocialMedia extends Model
+class Promotion extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
         'slug',
-        'icon',
-        'link',
+        'thumbnail',
+        'path_video',
     ];
 
     public function setNameAttribute($value)
@@ -27,6 +27,6 @@ class SocialMedia extends Model
 
     public function news(): HasMany
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(benefitPromotion::class);
     }
 }

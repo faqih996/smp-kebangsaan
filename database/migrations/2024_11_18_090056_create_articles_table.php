@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('slug');
             $table->string('description');
             $table->enum('is_featured', ['featured', 'not_featured'])->default('not_featured');
-            $table->string('thumbnails1');
-            $table->string('thumbnails2')->nullable();
-            $table->string('thumbnails3')->nullable();
-            $table->string('thumbnails4')->nullable();
-            $table->string('thumbnails5')->nullable();
+            $table->string('thumbnail1');
+            $table->string('thumbnail2')->nullable();
+            $table->string('thumbnail3')->nullable();
+            $table->string('thumbnail4')->nullable();
+            $table->string('thumbnail5')->nullable();
             $table->string('path_video')->nullable();
             $table->softDeletes();
             $table->timestamps();
