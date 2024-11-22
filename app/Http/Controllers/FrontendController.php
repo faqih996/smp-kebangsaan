@@ -15,4 +15,44 @@ class FrontendController extends Controller
     {
         return view('frontend.about');
     }
+
+    public function visimision()
+    {
+        return view('frontend.visimision');
+    }
+
+    public function greeting()
+    {
+        return view('frontend.greeting');
+    }
+
+    public function teacher()
+    {
+        return view('frontend.teacher');
+    }
+
+    public function facility()
+    {
+        return view('frontend.facility');
+    }
+
+    public function extracurricular()
+    {
+        return view('frontend.extracurricular');
+    }
+
+    public function information()
+    {
+        return view('frontend.extracurricular');
+    }
+
+    public function gallery()
+    {
+        return view('frontend.extracurricular');
+    }
+
+    public function article()
+    {
+        return view('frontend.extracurricular');
+    }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', ' Beranda')
+@section('title', 'Beranda')
 
 @section('content')
     <!-- Hero Section -->
