@@ -1,4 +1,4 @@
-<header id="Navbar" class="sticky top-0 z-50 w-full p-4 bg-white shadow-md">
+<header id="Navbar" class="sticky top-0 z-50 w-full p-2 bg-white shadow-md">
     <!-- Social Media Navbar -->
     <nav id="social-media"
         class="xl:max-w-[1200px] mx-auto flex justify-between items-center xl:mt-[10px] mt-[5px] lg:px-4 px-2">
@@ -35,10 +35,9 @@
         <div class="bg-white">
             <div class="container mx-auto xl:max-w-[1200px] px-2 xl:px-4 mt-2">
                 <div class="relative flex items-center justify-between -mx-4">
-                    <div class="max-w-full px-4 w-60">
-                        <a href="javascript:void(0)" class="block w-full py-5">
-                            <img src="https://cdn.tailgrids.com/2.2/assets/images/logo/logo-primary.svg"
-                                alt="logo" />
+                    <div class="max-w-full px-4 w-80">
+                        <a href="{{ route('front.index') }}" class="block w-full py-5">
+                            <img src="{{ asset('assets/images/logos/logo-text3.svg') }}" alt="logo" />
                         </a>
                     </div>
                     <div class="flex items-center justify-between w-full px-4">
@@ -54,7 +53,7 @@
                                 class="absolute right-4 top-full w-full max-w-[300px] rounded-lg bg-white px-6 py-5 shadow lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none">
                                 <ul class="block lg:flex">
                                     <li>
-                                        <a href="javascript:void(0)"
+                                        <a href="{{ route('front.index') }}"
                                             class="flex py-2 text-base font-medium text-body-color hover:text-dark lg:ml-12 lg:inline-flex">
                                             Beranda
                                         </a>
@@ -79,7 +78,7 @@
                                             <div class="grid gap-5">
                                                 <div>
                                                     <div class="space-y-2">
-                                                        <a href="javascript:void(0)"
+                                                        <a href="{{ route('front.about') }}"
                                                             class="flex flex-col gap-4 p-4 duration-200 rounded-lg group hover:bg-gray-1 lg:flex-row">
                                                             <div class="text-primary">
                                                                 <svg width="24" height="24" viewBox="0 0 24 24"
@@ -101,26 +100,6 @@
                                                                 <h3
                                                                     class="mb-1 text-base font-semibold duration-200 text-dark group-hover:text-primary">
                                                                     Tentang Sekolah
-                                                                </h3>
-                                                            </div>
-                                                        </a>
-                                                        <a href="javascript:void(0)"
-                                                            class="flex flex-col gap-4 p-4 duration-200 rounded-lg group hover:bg-gray-1 lg:flex-row">
-                                                            <div class="text-primary">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24"
-                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M11.4 7.72501H13.9875C14.4375 7.72501 14.8125 7.35001 14.8125 6.90001C14.8125 6.45001 14.4375 6.07501 13.9875 6.07501H13.2375V5.73751C13.2375 5.28751 12.8625 4.91251 12.4125 4.91251C11.9625 4.91251 11.5875 5.28751 11.5875 5.73751V6.07501H11.4375C10.2 6.07501 9.1875 7.08751 9.1875 8.28751C9.1875 9.52501 10.2 10.5 11.4375 10.5H12.6375C12.9375 10.5 13.2 10.7625 13.2 11.025C13.2 11.2875 12.9375 11.55 12.6375 11.55H10.05C9.6 11.55 9.225 11.925 9.225 12.375C9.225 12.825 9.6 13.2 10.05 13.2H11.5875V13.5375C11.5875 13.9875 11.9625 14.3625 12.4125 14.3625C12.8625 14.3625 13.2375 13.9875 13.2375 13.5375V13.0875C14.175 12.825 14.85 11.9625 14.85 10.95C14.85 9.71251 13.8375 8.73751 12.6 8.73751H11.4C11.1 8.73751 10.8375 8.51251 10.8375 8.21251C10.8375 7.91251 11.1 7.72501 11.4 7.72501Z"
-                                                                        fill="currentColor" />
-                                                                    <path
-                                                                        d="M20.9998 1.27499H2.9998C1.7248 1.27499 0.674805 2.32499 0.674805 3.59999V15.1125C0.674805 16.3875 1.7248 17.4375 2.9998 17.4375H11.1748V21H8.13731C7.68731 21 7.3123 21.375 7.3123 21.825C7.3123 22.275 7.68731 22.65 8.13731 22.65H15.8998C16.3498 22.65 16.7248 22.275 16.7248 21.825C16.7248 21.375 16.3498 21 15.8998 21H12.8623V17.4375H20.9998C22.2748 17.4375 23.3248 16.3875 23.3248 15.1125V3.59999C23.3623 2.32499 22.2748 1.27499 20.9998 1.27499ZM21.6748 15.15C21.6748 15.525 21.3748 15.825 20.9998 15.825H2.9998C2.6248 15.825 2.3248 15.525 2.3248 15.15V3.59999C2.3248 3.22499 2.6248 2.92499 2.9998 2.92499H20.9998C21.3748 2.92499 21.6748 3.22499 21.6748 3.59999V15.15Z"
-                                                                        fill="currentColor" />
-                                                                </svg>
-                                                            </div>
-                                                            <div>
-                                                                <h3
-                                                                    class="mb-1 text-base font-semibold duration-200 text-dark group-hover:text-primary">
-                                                                    Visi & Misi
                                                                 </h3>
                                                             </div>
                                                         </a>
@@ -149,9 +128,8 @@
                                                         <a href="javascript:void(0)"
                                                             class="flex flex-col gap-4 p-4 duration-200 rounded-lg group hover:bg-gray-1 lg:flex-row">
                                                             <div class="text-primary">
-                                                                <svg width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
                                                                         d="M18.9374 23.3625H7.4999C5.7749 23.3625 4.3124 22.05 4.1249 20.3625C4.1249 20.2875 4.0874 20.25 4.0874 20.175V2.96249C4.0874 1.68749 5.0999 0.674988 6.3749 0.674988H17.5499C18.8249 0.674988 19.8374 1.68749 19.8374 2.96249V16.0125C19.8374 17.2875 18.8249 18.3 17.5499 18.3H7.4999C7.0499 18.3 6.5999 18.4875 6.2999 18.7875C5.9624 19.0875 5.8124 19.5375 5.8124 19.9875C5.8124 20.925 6.5624 21.675 7.4999 21.675H18.9374C19.3874 21.675 19.7999 22.05 19.7999 22.5375C19.7999 23.025 19.4249 23.3625 18.9374 23.3625ZM6.4124 2.36249C6.0749 2.36249 5.8124 2.62499 5.8124 2.96249V17.0625C6.3374 16.7625 6.8999 16.6125 7.4999 16.6125H17.5874C17.9249 16.6125 18.1874 16.35 18.1874 16.0125V2.96249C18.1874 2.62499 17.9249 2.36249 17.5874 2.36249H6.4124Z"
                                                                         fill="currentColor" />

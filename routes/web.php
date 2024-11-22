@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [FrontendController::class, 'index'])->name('front.index');
+Route::get('about', [FrontendController::class, 'about'])->name('front.about');
 
 Route::middleware([
     'auth:sanctum',
