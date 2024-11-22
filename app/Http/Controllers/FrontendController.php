@@ -43,16 +43,16 @@ class FrontendController extends Controller
 
     public function information()
     {
-        return view('frontend.extracurricular');
+        return view('frontend.information');
     }
 
     public function gallery()
     {
-        return view('frontend.extracurricular');
+        return view('frontend.gallery');
     }
 
     public function article()
     {
-        return view('frontend.extracurricular');
+        return view('frontend.article');
     }
 }
