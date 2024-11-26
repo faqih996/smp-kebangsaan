@@ -18,7 +18,7 @@
                                 @endforeach
                             @endif
                             <div class="flex-auto p-6">
-                                <p class="text-sm leading-normal uppercase">Buat Carousel Baru</p>
+                                <p class="text-sm leading-normal uppercase">Tambah Carousel Baru</p>
                                 <form method="POST" action="{{ route('admin.carousel.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf

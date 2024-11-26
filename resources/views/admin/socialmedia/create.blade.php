@@ -18,16 +18,25 @@
                                 @endforeach
                             @endif
                             <div class="flex-auto p-6">
-                                <p class="text-sm leading-normal uppercase">Buat Category Baru</p>
-                                <form method="POST" action="{{ route('admin.category.store') }}"
+                                <p class="text-sm leading-normal uppercase">Tambah Sosial Media Baru</p>
+                                <form method="POST" action="{{ route('admin.socialmedia.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="flex flex-wrap -mx-3">
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
                                                 <label for="name"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Title</label>
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Name</label>
                                                 <input type="text" name="name" required autofocus
+                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                            <div class="mb-4">
+                                                <label for="link"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Link</label>
+                                                <input type="text" name="link" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -41,6 +50,8 @@
                                                     class="focus:shadow-primary-outline  text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                             </div>
                                         </div>
+
+
 
                                     </div>
 

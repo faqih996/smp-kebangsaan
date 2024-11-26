@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSocmedRequest;
+use App\Http\Requests\UpdateSocmedRequest;
 use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +16,9 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        $socialmedia = SocialMedia::orderByDesc('id')->get();
+        $socialmedias = SocialMedia::orderByDesc('id')->get();
 
-        return view('admin.socialmedia.index', compact('socialmedia'));
+        return view('admin.socialmedia.index', compact('socialmedias'));
     }
 
     /**
@@ -30,9 +32,21 @@ class SocialMediaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSocmedRequest $request)
     {
-        //
+        DB::Transaction(function () use ($request) {
+            $validated = $request->validated();
+
+            if ($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('icons', 'public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $validated['slug'] = Str::slug($validated['name']);
+
+            $socialmedia = SocialMedia::create($validated);
+        });
+        return redirect()->route('admin.socialmedia.index')->with('success', 'Social Media created successfully');
     }
 
     /**
@@ -55,9 +69,25 @@ class SocialMediaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SocialMedia $socialMedia)
+    public function update(UpdateSocmedRequest $request, $slug)
     {
-        //
+        $socialmedia = SocialMedia::where('slug', $slug)->firstOrFail();
+
+        DB::transaction(function () use ($request, $socialmedia) {
+
+            $validated = $request->validated();
+
+            if ($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('icons', 'public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $validated['slug'] = Str::slug($validated['name']);
+
+            $socialmedia->update($validated);
+        });
+
+        return redirect()->route('admin.socialmedia.index')->with('success', 'Social Media edited successfully');
     }
 
     /**
@@ -65,11 +95,11 @@ class SocialMediaController extends Controller
      */
     public function destroy($slug)
     {
-        $category = SocialMedia::where('slug', $slug)->firstOrFail();
+        $socmed = SocialMedia::where('slug', $slug)->firstOrFail();
         DB::beginTransaction();
 
         try {
-            $category->delete();
+            $socmed->delete();
             DB::commit();
 
             return redirect()->route('admin.socialmedia.index')->with('success', 'Social Media deleted successfully');

@@ -18,7 +18,7 @@
                                 @endforeach
                             @endif
                             <div class="flex-auto p-6">
-                                <p class="text-sm leading-normal uppercase">Buat Category Baru</p>
+                                <p class="text-sm leading-normal uppercase">Tambah Category Baru</p>
                                 <form method="POST" action="{{ route('admin.category.store') }}"
                                     enctype="multipart/form-data">
                                     @csrf
