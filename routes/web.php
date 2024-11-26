@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,10 @@ Route::get('article', [FrontendController::class, 'article'])->name('front.artic
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-    Route::resource('carousel', CarouselController::class);
-
+    Route::resource('carousel', CarouselController::class)->parameters([
+    'carousel' => 'slug']);
+    Route::resource('category', CategoryController::class)->parameters([
+    'carousel' => 'slug']);
 });
 // Route::middleware([
 //     'auth:sanctum',
