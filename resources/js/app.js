@@ -1,5 +1,16 @@
 import './bootstrap';
 
+import '../../public/js/admin/argon-dashboard-tailwind'
 import '../../public/js/frontend/carousel'
 import '../../public/js/frontend/two-lines-text'
 import '../../public/js/frontend/main'
+import '../../public/js/admin/carousel'
+import '../../public/js/admin/charts'
+import '../../public/js/admin/dropdown'
+import '../../public/js/admin/fixed-plugin'
+import '../../public/js/admin/nav-pills'
+import '../../public/js/admin/navbar-collapse'
+import '../../public/js/admin/navbar-sticky'
+import '../../public/js/admin/perfect-scrollbar'
+import '../../public/js/admin/sidenav-burger'
+import '../../public/js/admin/tooltips'

@@ -144,215 +144,211 @@
                     </div>
                     <div class="overflow-x-auto">
                         <table class="items-center w-full mb-4 align-top border-collapse border-gray-200">
-                            <tbody>
+                            <thead class="align-bottom">
                                 <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
+                                    <th
+                                        class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Title</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Category</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Created At</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border-t">
+                                <tr>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2">
                                             <div>
-                                                <img src="./assets/img/icons/flags/US.png" alt="thumbnail" />
+                                                <img src="{{ asset('assets/images/thumbnails/th-sunbathe.png') }}"
+                                                    class="inline-flex items-center justify-center h-20 mr-2 text-sm text-white transition-all duration-200 ease-in-out w-30"
+                                                    alt="thumbnails" />
                                             </div>
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Country:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
-                                                </h6>
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm leading-normal">Adobe XD</h6>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Sales:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Value:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
                                         </div>
                                     </td>
                                     <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Bounce:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-sm font-semibold leading-normal">
+                                            $2,300</p>
+                                    </td>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight">Kegiatan Sosial</span>
+                                    </td>
+
+                                    <td
+                                        class="items-center p-2 bg-transparent border-b-0 align-center whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-yellow-400 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Edit</p>
+                                        </button>
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-red-100 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Delete</p>
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                                        <div class="flex items-center px-2 py-1">
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2">
                                             <div>
-                                                <img src="./assets/img/icons/flags/DE.png" alt="Country flag" />
+                                                <img src="{{ asset('assets/images/thumbnails/th-sunbathe.png') }}"
+                                                    class="inline-flex items-center justify-center h-20 mr-2 text-sm text-white transition-all duration-200 ease-in-out w-30"
+                                                    alt="thumbnails" />
                                             </div>
-                                            <div class="ml-6">
-                                                <p
-                                                    class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                    Country:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                    Germany
-                                                </h6>
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm leading-normal">Adobe XD</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Sales:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                3.900
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-sm font-semibold leading-normal">
+                                            $2,300</p>
                                     </td>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Value:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                $440,000
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight">Kegiatan Sosial</span>
                                     </td>
+
                                     <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="flex-1 text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Bounce:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                40.22%
-                                            </h6>
-                                        </div>
+                                        class="items-center p-2 bg-transparent border-b-0 align-center whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-yellow-400 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Edit</p>
+                                        </button>
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-red-100 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Delete</p>
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap dark:border-white/40">
-                                        <div class="flex items-center px-2 py-1">
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2">
                                             <div>
-                                                <img src="./assets/img/icons/flags/GB.png" alt="Country flag" />
+                                                <img src="{{ asset('assets/images/thumbnails/th-sunbathe.png') }}"
+                                                    class="inline-flex items-center justify-center h-20 mr-2 text-sm text-white transition-all duration-200 ease-in-out w-30"
+                                                    alt="thumbnails" />
                                             </div>
-                                            <div class="ml-6">
-                                                <p
-                                                    class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                    Country:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                    Great Britain
-                                                </h6>
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm leading-normal">Adobe XD</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Sales:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                1.400
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-sm font-semibold leading-normal">
+                                            $2,300</p>
                                     </td>
                                     <td
-                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Value:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                $190,700
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight">Kegiatan Sosial</span>
                                     </td>
+
                                     <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap dark:border-white/40">
-                                        <div class="flex-1 text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Bounce:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                23.44%
-                                            </h6>
-                                        </div>
+                                        class="items-center p-2 bg-transparent border-b-0 align-center whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-yellow-400 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Edit</p>
+                                        </button>
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-red-100 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Delete</p>
+                                        </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="p-2 align-middle bg-transparent border-0 w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2">
                                             <div>
-                                                <img src="./assets/img/icons/flags/BR.png" alt="Country flag" />
+                                                <img src="{{ asset('assets/images/thumbnails/th-sunbathe.png') }}"
+                                                    class="inline-flex items-center justify-center h-20 mr-2 text-sm text-white transition-all duration-200 ease-in-out w-30"
+                                                    alt="thumbnails" />
                                             </div>
-                                            <div class="ml-6">
-                                                <p
-                                                    class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                    Country:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                    Brasil
-                                                </h6>
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm leading-normal">Adobe XD</h6>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Sales:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                562
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-0 whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Value:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                $143,960
-                                            </h6>
                                         </div>
                                     </td>
                                     <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-0 whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p
-                                                class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">
-                                                Bounce:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal dark:text-white">
-                                                32.14%
-                                            </h6>
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-sm font-semibold leading-normal">
+                                            $2,300</p>
+                                    </td>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight">Kegiatan Sosial</span>
+                                    </td>
+
+                                    <td
+                                        class="items-center p-2 bg-transparent border-b-0 align-center whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-yellow-400 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Edit</p>
+                                        </button>
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-red-100 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Delete</p>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2">
+                                            <div>
+                                                <img src="{{ asset('assets/images/thumbnails/th-sunbathe.png') }}"
+                                                    class="inline-flex items-center justify-center h-20 mr-2 text-sm text-white transition-all duration-200 ease-in-out w-30"
+                                                    alt="thumbnails" />
+                                            </div>
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm leading-normal">Adobe XD</h6>
+                                            </div>
                                         </div>
+                                    </td>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-sm font-semibold leading-normal">
+                                            $2,300</p>
+                                    </td>
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                                        <span class="text-xs font-semibold leading-tight">Kegiatan Sosial</span>
+                                    </td>
+
+                                    <td
+                                        class="items-center p-2 bg-transparent border-b-0 align-center whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-yellow-400 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Edit</p>
+                                        </button>
+                                        <button
+                                            class="inline-block my-auto text-xs font-bold text-center align-middle transition-all ease-in bg-transparent border-0 shadow-none cursor-pointer group leading-pro text-slate-700">
+                                            <p class="bg-red-100 lg:py-2 lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200"
+                                                aria-hidden="true">Delete</p>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -488,233 +484,63 @@
 
                     <div class="overflow-x-auto">
                         <table class="items-center w-full mb-4 align-top border-collapse border-gray-200">
-                            <tbody>
+                            <thead class="align-bottom">
                                 <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Name:
-                                                </p>
+                                    <th
+                                        class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Sender</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Category</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Subject</th>
+                                    <th
+                                        class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        Action</th>
+                                    <th
+                                        class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-solid shadow-none dark:border-white/40 dark:text-white tracking-none whitespace-nowrap">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <tr>
+                                    <td
+                                        class="p-6 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <div class="flex px-2 py-1">
+                                            <div class="flex flex-col justify-center">
                                                 <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
+                                                    John Michael
                                                 </h6>
+                                                <p class="mb-0 text-xs leading-tight text-slate-400">
+                                                    john@creative-tim.com
+                                                </p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Email:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Category:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
-                                        </div>
-                                    </td>
                                     <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Subject:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
+                                        class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <p class="mb-0 text-xs font-semibold leading-tight">
+                                            Manager
+                                        </p>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Name:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Email:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Category:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Subject:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Name:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Email:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Category:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Subject:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Name:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Email:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Category:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Subject:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2 align-middle bg-transparent border-b w-3/10 whitespace-nowrap">
-                                        <div class="flex items-center px-2 py-1">
-                                            <div class="ml-6">
-                                                <p class="mb-0 text-xs font-semibold leading-tight">
-                                                    Name:
-                                                </p>
-                                                <h6 class="mb-0 text-sm leading-normal">
-                                                    United States
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Email:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                2500
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Category:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                $230,900
-                                            </h6>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="p-2 text-sm leading-normal align-middle bg-transparent border-b whitespace-nowrap">
-                                        <div class="flex-1 text-center">
-                                            <p class="mb-0 text-xs font-semibold leading-tight">
-                                                Subject:
-                                            </p>
-                                            <h6 class="mb-0 text-sm leading-normal">
-                                                29.9%
-                                            </h6>
-                                        </div>
-                                    </td>
-                                </tr>
 
+                                    <td
+                                        class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <a href="javascript:;"
+                                            class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">
+                                            gini loh pak sebenernya aku
+                                        </a>
+                                    </td>
+
+                                    <td
+                                        class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                                        <button
+                                            class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200">
+                                            Open
+                                        </button>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

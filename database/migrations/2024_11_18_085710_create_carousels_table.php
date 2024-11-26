@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('thumbnail');
+            $table->enum('is_active', ['active', 'not_active']);
             $table->string('description');
             $table->softDeletes();
             $table->timestamps();

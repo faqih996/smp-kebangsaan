@@ -38,6 +38,16 @@
     @stack('after-script')
 
     </div>
+
+    <script>
+        @if ($message = session('succes_message'))
+            Swal.fire(
+                'Good job!',
+                '{{ $message }}',
+                'success'
+            )
+        @endif
+    </script>
 </body>
 
 </html>

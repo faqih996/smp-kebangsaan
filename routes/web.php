@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,12 @@ Route::get('information', [FrontendController::class, 'information'])->name('fro
 Route::get('article', [FrontendController::class, 'article'])->name('front.article');
 // Route::get('article/detail/{article:slug}', [FrontendController::class, 'articleDetail'])->name('front.article.detail');
 
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
+    Route::resource('carousel', CarouselController::class);
+
+});
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
