@@ -19,24 +19,25 @@
                     </div>
                     <div class="flex-auto px-0 pt-0 pb-2">
                         <div class="overflow-x-auto lg:p-2">
-                            @forelse ($carousels as $carousel)
-                                <table class="items-center w-full mb-0 align-top border-collapse text-slate-500">
-                                    <thead class="align-bottom">
-                                        <tr>
-                                            <th
-                                                class="px-4 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                Title
-                                            </th>
-                                            <th
-                                                class="px-4 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                                Status
-                                            </th>
-                                            <th
-                                                class="px-4 py-3 font-semibold capitalize align-middle bg-transparent border-b border-collapse border-solid shadow-none lg:px-6 tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                            </th>
-                                        </tr>
-                                    </thead>
 
+                            <table class="items-center w-full mb-0 align-top border-collapse text-slate-500">
+                                <thead class="align-bottom">
+                                    <tr>
+                                        <th
+                                            class="px-4 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                            Title
+                                        </th>
+                                        <th
+                                            class="px-4 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                            Status
+                                        </th>
+                                        <th
+                                            class="px-4 py-3 font-semibold capitalize align-middle bg-transparent border-b border-collapse border-solid shadow-none lg:px-6 tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                @forelse ($carousels as $carousel)
                                     <tbody>
                                         <tr>
                                             <td
@@ -81,12 +82,17 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
-                            @empty
-                                <p class="items-center p-2 text-center">
-                                    Belum ada data
-                                </p>
-                            @endforelse
+                                @empty
+                                    <tbody>
+                                        <tr>
+                                            <td class="p-2 text-center align-middle bg-transparent whitespace-nowrap shadow-transparent"
+                                                colspan="3">
+                                                No Carousel found.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                @endforelse
+                            </table>
                         </div>
                     </div>
                 </div>
