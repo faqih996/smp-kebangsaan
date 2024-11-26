@@ -43,11 +43,10 @@
                                             <td
                                                 class="align-middle bg-transparent lg:p-2 whitespace-nowrap shadow-transparent">
                                                 <div class="flex items-center gap-2 px-2 py-1">
-                                                    <div>
-                                                        <img src="{{ Storage::url($socmed->icon) }}"
-                                                            class="items-center justify-center w-8 h-8 mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-md"
-                                                            alt="thumbnails" />
-                                                    </div>
+
+                                                    <img src="{{ Storage::url($socmed->icon) }}"
+                                                        class="items-center justify-center w-6 h-6 mr-2 text-sm text-white transition-all duration-200 ease-in-out lg:w-10 lg:h-10"
+                                                        alt="thumbnails" />
                                                 </div>
                                             </td>
                                             <td

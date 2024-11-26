@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\VisionController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -32,10 +33,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('carousel', CarouselController::class)->parameters([
     'carousel' => 'slug']);
     Route::resource('category', CategoryController::class)->parameters([
-    'carousel' => 'slug']);
+        'category' => 'slug']);
     Route::resource('socialmedia', SocialMediaController::class)->parameters([
-        'carousel' => 'slug'
+        'socialmedia' => 'slug'
     ]);
+    Route::resource('vision-mission', VisionController::class);
 });
 // Route::middleware([
 //     'auth:sanctum',

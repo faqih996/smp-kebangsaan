@@ -45,7 +45,7 @@
                                                 <div class="flex items-center gap-2 px-2 py-1">
                                                     <div>
                                                         <img src="{{ Storage::url($category->icon) }}"
-                                                            class="items-center justify-center w-8 h-8 mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-md"
+                                                            class="items-center justify-center w-6 h-6 mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-md lg:w-8 lg:h-8"
                                                             alt="thumbnails" />
                                                     </div>
                                                 </div>

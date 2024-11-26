@@ -1,0 +1,93 @@
+@extends('layouts.app')
+
+@section('title', 'Edit Visi Misi')
+
+@section('content')
+    <div class="w-full px-6 py-6 mx-auto">
+        <div class="flex flex-wrap -mx-3">
+            <div class="flex-none w-full max-w-full px-3">
+                <div
+                    class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                    <div class="flex-auto px-0 pt-0 pb-2">
+                        <div class="p-2 overflow-x-auto">
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <div class="w-full py-3 text-white bg-red-500 rounded-3xl">
+                                        {{ $error }}
+                                    </div>
+                                @endforeach
+                            @endif
+                            <div class="flex-auto p-6">
+                                <p class="text-sm leading-normal uppercase">Edit Visi & Misi Sekolah</p>
+                                <form method="POST" action="{{ route('admin.vision-mission.store') }}"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+                                    <div class="flex flex-wrap -mx-3">
+                                        <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                                            <div class="mb-4">
+                                                <label for="name"
+                                                    class="block text-sm font-bold text-slate-700">Visi</label>
+                                                <input type="text" id="name" name="name"
+                                                    value="{{ $vision->name }}"
+                                                    class="block w-full px-3 py-2 text-black border border-gray-300 rounded-lg focus:ring-blue-500">
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                                            <div class="flex flex-col py-2 mb-4">
+                                                <label for="name"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Misi</label>
+                                                @forelse ($mission as $mission_item)
+                                                    <input placeholder="missions" type="text"
+                                                        name="{{ 'missions[' . $mission_item->id . ']' }}" id="missions"
+                                                        autocomplete="missions"
+                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+                                                        value="{{ $mission_item->name ?? '' }}" required>
+                                                @empty
+                                                    {{-- empty --}}
+                                                @endforelse
+
+                                                <div id="newMissionRow"></div>
+
+                                                <button type="button"
+                                                    class="px-3 py-2 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                                                    id="addMisionRow">
+                                                    Tambahkan Misi +
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-center justify-end mt-4 z-200">
+                                            <button type="submit"
+                                                class="px-6 py-4 font-bold text-green-100 rounded-md bg-blue-70">
+                                                Simpan
+                                            </button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('after-script')
+    <script type="text/javascript">
+        // add row
+        $("#addMisionRow").click(function() {
+            var html = '';
+            html +=
+                '<input type="text" name="mission[]" class="mt-2 text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />';
+
+            $('#newMissionRow').append(html);
+        });
+
+        // remove row
+        $(document).on('click', '#removeTaglineRow', function() {
+            $(this).closest('#inputFormTaglineRow').remove();
+        });
+    </script>
+@endpush
