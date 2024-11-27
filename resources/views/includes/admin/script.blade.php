@@ -4,3 +4,4 @@
 <script src="{{ asset('js/admin/plugins/perfect-scrollbar.js') }}" async></script>
 <!-- main script file  -->
 <script src="{{ asset('js/admin/argon-dashboard-tailwind.js') }}" async></script>
+<script src="{{ asset('js/frontend/two-lines-text.js') }}"></script>

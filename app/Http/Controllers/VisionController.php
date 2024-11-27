@@ -18,8 +18,9 @@ class VisionController extends Controller
     public function index()
     {
         $vision = Vision::first();
+        $missions = Mision::orderBy('id', 'asc')->get();
 
-        return view('admin.visimisi.index', compact('vision'));
+        return view('admin.visimisi.index', compact('vision', 'missions'));
     }
 
     /**
@@ -85,9 +86,41 @@ class VisionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateVisionRequest $request, Vision $vision)
+    public function update(UpdateVisionRequest $request, Vision $vision, $id)
     {
-        //
+        // Start a database transaction
+        DB::transaction(function () use ($request, $vision, $id) {
+            // Validate and retrieve the data from the request
+            $validated = $request->validated();
+
+            // Update data Vision
+            $vision->update($validated);
+
+            // Update or create data for existing missions (from 'missions')
+            foreach ($validated['missions'] as $key => $value) {
+                // Find the mission by the given ID
+                $missions = Mision::find($key);
+                if ($missions) {
+                    $missions->name = $value;
+                    $missions->save();
+                } // Save changes
+            }
+
+            // Add new missions (from 'mission') - these do not have an ID and are new
+            if (isset($validated['mission'])) {
+                foreach ($validated['mission'] as $key => $value) {
+                    // Create new mission
+                    $mission = new Mision();
+                    $mission->vision_id = $id;
+                    $mission->name = $value;
+                    $mission->save();
+                }
+            }
+
+        });
+
+        // Redirect with success message
+        return redirect()->route('admin.vision-mission.index')->with('success', 'Visi Misi created successfully');
     }
 
     /**

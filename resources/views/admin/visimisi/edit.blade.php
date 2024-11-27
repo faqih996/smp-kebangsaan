@@ -19,8 +19,7 @@
                             @endif
                             <div class="flex-auto p-6">
                                 <p class="text-sm leading-normal uppercase">Edit Visi & Misi Sekolah</p>
-                                <form method="POST" action="{{ route('admin.vision-mission.store') }}"
-                                    enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('admin.vision-mission.update', $vision) }}">
                                     @csrf
                                     @method('PUT')
                                     <div class="flex flex-wrap -mx-3">
@@ -37,28 +36,38 @@
                                         <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
                                             <div class="flex flex-col py-2 mb-4">
                                                 <label for="name"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Misi</label>
+                                                    class="block text-sm font-bold text-slate-700">Misi</label>
                                                 @forelse ($mission as $mission_item)
-                                                    <input placeholder="missions" type="text"
-                                                        name="{{ 'missions[' . $mission_item->id . ']' }}" id="missions"
-                                                        autocomplete="missions"
-                                                        class="block w-full py-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
-                                                        value="{{ $mission_item->name ?? '' }}" required>
+                                                    <div class="flex">
+                                                        <input placeholder="missions" type="text"
+                                                            name="{{ 'missions[' . $mission_item->id . ']' }}                                                       id="missions"
+                                                            autocomplete="missions"
+                                                            class="block w-7/12 w-full mt-1 border-gray-300 rounded-lg focus:ring-blue-500 sm:text-sm"
+                                                            value="{{ $mission_item->name ?? '' }}" required>
+
+                                                        <!-- Button to delete the mission -->
+                                                        <button type="button" class="ml-2 text-red-500 hover:text-red-700"
+                                                            onclick="confirmDelete({{ $mission_item->id }})">
+                                                            Hapus
+                                                        </button>
+                                                    </div>
+
                                                 @empty
                                                     {{-- empty --}}
                                                 @endforelse
 
                                                 <div id="newMissionRow"></div>
 
-                                                <button type="button"
-                                                    class="px-3 py-2 text-xs font-medium text-gray-700 bg-gray-100 border border-transparent rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-                                                    id="addMisionRow">
-                                                    Tambahkan Misi +
-                                                </button>
                                             </div>
+
+                                            <button type="button"
+                                                class="items-center px-3 py-2 mt-2 text-xs font-medium text-gray-700"
+                                                id="addMisionRow">
+                                                Tambahkan Misi +
+                                            </button>
                                         </div>
 
-                                        <div class="flex items-center justify-end mt-4 z-200">
+                                        <div class="flex justify-end mt-4 z-200">
                                             <button type="submit"
                                                 class="px-6 py-4 font-bold text-green-100 rounded-md bg-blue-70">
                                                 Simpan
@@ -86,8 +95,21 @@
         });
 
         // remove row
-        $(document).on('click', '#removeTaglineRow', function() {
-            $(this).closest('#inputFormTaglineRow').remove();
+        $(document).on('click', '#removeMissionRow', function() {
+            $(this).closest('#inputFormMissionRow').remove();
         });
+
+        function confirmDelete(missionId) {
+            if (confirm('Apakah Anda yakin ingin menghapus misi ini?')) {
+                // Add mission ID to delete_missions field
+                let deleteInput = document.getElementById('delete_missions');
+                let currentValue = deleteInput.value;
+                deleteInput.value = currentValue ? currentValue + ',' + missionId : missionId;
+
+                // Optionally, hide the mission row or remove it from the DOM
+                let missionRow = event.target.closest('.flex');
+                missionRow.remove();
+            }
+        }
     </script>
 @endpush

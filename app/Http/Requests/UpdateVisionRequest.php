@@ -25,8 +25,10 @@ class UpdateVisionRequest extends FormRequest
             'name' => 'required',
             'string',
             'max:255',
-            'mission' => 'sometimes|array|min:1',  // Make sure 'mission' is an array
-            'mission.*' => 'sometimes|string|max:255',  // Validate each mission item
+            'missions' => 'array',  // Validasi untuk array missions
+            'missions.*' => 'string',
+            'mission' => 'array',  // Validasi untuk array mission
+            'mission.*' => 'string',  // Validate each mission item
         ];
     }
 }

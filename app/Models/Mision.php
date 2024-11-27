@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Mision extends Model
 {
-     use HasFactory;
+    use HasFactory;
 
     protected $fillable = [
         'vision_id',

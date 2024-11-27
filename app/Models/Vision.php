@@ -12,7 +12,7 @@ class Vision extends Model
         'name',
     ];
 
-    public function mission(): HasMany
+    public function mission()
     {
         return $this->hasMany(Mision::class);
     }
