@@ -27,16 +27,16 @@
                         @endif
                     </div>
 
-                    <div class="flex-auto px-0 pt-0 pb-2">
-                        <div class="overflow-x-auto text-center lg:p-6">
-                            <h3 class="text-heading-5">Visi</h3>
-                            <p class="text-heading-7">{{ $vision->name }}</p>
-                            <h3 class="text-heading-5">Misi</h3>
+                    <div class="flex-auto px-2 pt-6 pb-2">
+                        <div class="w-full p-8 overflow-hidden text-center">
+                            <h3 class="lg:text-heading-7 text-heading-8">Visi</h3>
+                            <p class="mb-8 lg:text-heading-7 text-heading-10">{{ $vision->name }}</p>
+                            <h3 class="lg:text-heading-7 text-heading-8">Misi</h3>
 
                             @forelse ($missions as $index => $mission)
-                                <div class="flex flex-row gap-2 px-6 mb-2">
-                                    <p class=" text-heading-7 two-lines">{{ $index + 1 }}.</p>
-                                    <p class="text-justify text-heading-7">{{ $mission->name }}</p>
+                                <div class="flex flex-row w-auto gap-2 mb-2">
+                                    <p class="lg:text-heading-7 text-heading-10">{{ $index + 1 }}.</p>
+                                    <p class="text-left lg:text-heading-7 text-heading-10">{{ $mission->name }}</p>
                                 </div>
                             @empty
                             @endforelse
