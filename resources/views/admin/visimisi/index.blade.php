@@ -34,13 +34,12 @@
                             <h3 class="text-heading-5">Misi</h3>
 
                             @forelse ($missions as $index => $mission)
-                                <div class="flex flex-row gap-2 mb-2 ">
-                                    <p class="text-heading-7">{{ $index + 1 }}.</p>
+                                <div class="flex flex-row gap-2 px-6 mb-2">
+                                    <p class=" text-heading-7 two-lines">{{ $index + 1 }}.</p>
                                     <p class="text-justify text-heading-7">{{ $mission->name }}</p>
                                 </div>
                             @empty
                             @endforelse
-
                         </div>
                     </div>
                 </div>
