@@ -14,9 +14,9 @@ class Facility extends Model
     protected $fillable = [
         'name',
         'slug',
-        'thumbnail',
-        'quantity',
         'description',
+        'quantity',
+        'thumbnail',
     ];
 
     public function setNameAttribute($value)

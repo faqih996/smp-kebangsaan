@@ -23,7 +23,7 @@ class StoreCarouselRequest extends FormRequest
     {
         return [
             'name' => 'required', 'string', 'max:255',
-            'thumbnail' => 'required', 'image', 'mimes:png,jpg,jpeg',
+            'thumbnail' => 'required', 'image', 'mimes:png,jpg,jpeg', 'max:10240',
             'is_active' => 'required',
             'description' => 'required', 'string'
         ];

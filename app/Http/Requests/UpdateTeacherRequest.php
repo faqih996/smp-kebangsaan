@@ -23,7 +23,7 @@ class UpdateTeacherRequest extends FormRequest
     {
         return [
             'name' => 'required', 'string', 'max:255',
-            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg',
+            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:10240',
             'link' => 'required', 'string', 'max:255',
         ];
     }

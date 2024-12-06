@@ -23,7 +23,7 @@ class UpdateCarouselRequest extends FormRequest
     {
         return [
             'name' => 'required', 'string', 'max:255',
-            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg',
+            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:10240',
             'is_active' => 'required|in:active,not_active',
             'description' => 'required', 'string'
         ];

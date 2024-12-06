@@ -23,7 +23,7 @@ class UpdateSocmedRequest extends FormRequest
     {
         return [
             'name' => 'required', 'string', 'max:255',
-            'icon' => 'sometimes', 'image', 'mimes:png,jpg,jpeg',
+            'icon' => 'sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:10240',
             'link' => 'required', 'string', 'max:255',
         ];
     }

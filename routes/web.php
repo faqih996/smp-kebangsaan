@@ -4,6 +4,7 @@ use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TeacherController;
@@ -45,6 +46,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     ]);
     Route::resource('extracurricular', ExtracurricularController::class)->parameters([
         'extracurricular' => 'slug'
+    ]);
+    Route::resource('facility', FacilityController::class)->parameters([
+        'facility' => 'slug'
     ]);
     Route::resource('vision-mission', VisionController::class);
 });

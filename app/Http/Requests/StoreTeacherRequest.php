@@ -23,7 +23,7 @@ class StoreTeacherRequest extends FormRequest
     {
         return [
             'name' => 'required', 'string', 'max:255',
-            'thumbnail' => 'required', 'image', 'mimes:png,jpg,jpeg,svg',
+            'thumbnail' => 'required', 'image', 'mimes:png,jpg,jpeg,svg', 'max:10240',
             'mapel' => 'required', 'string', 'max:255',
         ];
     }
