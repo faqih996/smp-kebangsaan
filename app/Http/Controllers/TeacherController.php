@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class TeacherController extends Controller
 {
@@ -12,7 +14,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::orderByDesc('id')->get();
+
+        return view('admin.teacher.index', compact('teachers'));
     }
 
     /**
@@ -20,7 +24,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teacher.create');
     }
 
     /**
@@ -28,7 +32,19 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::Transaction(function () use ($request) {
+            $validated = $request->validated();
+
+            if ($request->hasFile('icon')) {
+                $iconPath = $request->file('icon')->store('thumbnails', 'public');
+                $validated['icon'] = $iconPath;
+            }
+
+            $validated['slug'] = Str::slug($validated['name']);
+
+            $teacher = Teacher::create($validated);
+        });
+        return redirect()->route('admin.teacher.index')->with('success', 'Teacher created successfully');
     }
 
     /**
@@ -44,7 +60,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('admin.teacher.create');
     }
 
     /**

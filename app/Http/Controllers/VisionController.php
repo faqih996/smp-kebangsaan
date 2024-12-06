@@ -88,36 +88,51 @@ class VisionController extends Controller
      */
     public function update(UpdateVisionRequest $request, Vision $vision, $id)
     {
+        // \DB::enableQueryLog();
+
+        // Validate and retrieve the data from the request
+        $validated = $request->validated();
+
+        //  dd($validated)
+
         // Start a database transaction
-        DB::transaction(function () use ($request, $vision, $id) {
-            // Validate and retrieve the data from the request
-            $validated = $request->validated();
+        DB::transaction(function () use ($validated, $vision, $id) {
+            try {
+                $vision->update($validated);
 
-            // Update data Vision
-            $vision->update($validated);
-
-            // Update or create data for existing missions (from 'missions')
-            foreach ($validated['missions'] as $key => $value) {
-                // Find the mission by the given ID
-                $missions = Mision::find($key);
-                if ($missions) {
-                    $missions->name = $value;
-                    $missions->save();
-                } // Save changes
-            }
-
-            // Add new missions (from 'mission') - these do not have an ID and are new
-            if (isset($validated['mission'])) {
-                foreach ($validated['mission'] as $key => $value) {
-                    // Create new mission
-                    $mission = new Mision();
-                    $mission->vision_id = $id;
-                    $mission->name = $value;
-                    $mission->save();
+                if (isset($validated['delete_missions'])) {
+                    $deleteMissions = explode(',', $validated['delete_missions']);
+                    Mision::whereIn('id', $deleteMissions)->delete();
                 }
-            }
 
+                // Proses update misi yang ada
+                foreach ($validated['missions'] as $key => $value) {
+                    $mission = Mision::find($key);
+                    if ($mission) {
+                        $mission->name = $value;
+                        $mission->save();
+                    }
+                }
+
+                // Tambahkan misi baru
+                if (isset($validated['mission'])) {
+                    foreach ($validated['mission'] as $key => $value) {
+                        $newMission = new Mision();
+                        $newMission->vision_id = $id;
+                        $newMission->name = $value;
+                        $newMission->save();
+                    }
+                }
+
+            } catch (\Exception $e) {
+                DB::rollBack();
+
+                return redirect()->route('admin.visimisi.index')->with('error', 'Failed to delete. Please try again later.');
+            }
         });
+
+        // Menampilkan query log untuk melihat query yang dijalankan
+        // dd(\DB::getQueryLog());  // Periksa log query setelah transaksi selesai
 
         // Redirect with success message
         return redirect()->route('admin.vision-mission.index')->with('success', 'Visi Misi created successfully');
@@ -126,7 +141,7 @@ class VisionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vision $vision)
+    public function destroy(Vision $vision, Mision $mission)
     {
         //
     }

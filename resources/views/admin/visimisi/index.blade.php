@@ -27,7 +27,7 @@
                         @endif
                     </div>
 
-                    <div class="flex-auto px-2 pt-6 pb-2">
+                    <div class="flex-auto px-6 pt-6 pb-2">
                         <div class="w-full p-8 overflow-hidden text-center">
                             <h3 class="lg:text-heading-7 text-heading-8">Visi</h3>
                             <p class="mb-8 lg:text-heading-7 text-heading-10">{{ $vision->name }}</p>
@@ -36,7 +36,8 @@
                             @forelse ($missions as $index => $mission)
                                 <div class="flex flex-row w-auto gap-2 mb-2">
                                     <p class="lg:text-heading-7 text-heading-10">{{ $index + 1 }}.</p>
-                                    <p class="text-left lg:text-heading-7 text-heading-10">{{ $mission->name }}</p>
+                                    <p class="lg:text-justify text-nowrap lg:text-heading-7 text-heading-10">
+                                        {{ $mission->name }}</p>
                                 </div>
                             @empty
                             @endforelse

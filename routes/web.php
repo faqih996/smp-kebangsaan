@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\VisionController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +37,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         'category' => 'slug']);
     Route::resource('socialmedia', SocialMediaController::class)->parameters([
         'socialmedia' => 'slug'
+    ]);
+    Route::resource('teacher', TeacherController::class)->parameters([
+        'teacher' => 'slug'
     ]);
     Route::resource('vision-mission', VisionController::class);
 });
