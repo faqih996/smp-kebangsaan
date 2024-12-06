@@ -3,10 +3,12 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\VisionController;
+use App\Models\Extracurricular;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -40,6 +42,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     ]);
     Route::resource('teacher', TeacherController::class)->parameters([
         'teacher' => 'slug'
+    ]);
+    Route::resource('extracurricular', ExtracurricularController::class)->parameters([
+        'extracurricular' => 'slug'
     ]);
     Route::resource('vision-mission', VisionController::class);
 });
