@@ -25,11 +25,11 @@
                                     <tr>
                                         <th
                                             class="px-4 py-3 font-bold text-left uppercase align-middle border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                            Foto
+                                            Nama
                                         </th>
                                         <th
                                             class="px-4 py-3 font-bold text-center uppercase align-middle border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                            Name
+                                            Mata Pelajaran
                                         </th>
                                         <th
                                             class="px-4 py-3 font-semibold capitalize align-middle border-b border-collapse border-solid shadow-none lg:px-6 tracking-none whitespace-nowrap text-slate-400 opacity-70">
@@ -45,23 +45,26 @@
                                                 <div class="flex items-center gap-2 px-2 py-1">
 
                                                     <img src="{{ Storage::url($teacher->thumbnail) }}"
-                                                        class="items-center justify-center w-6 h-6 mr-2 text-sm text-white transition-all duration-200 ease-in-out lg:w-10 lg:h-10"
+                                                        class="items-center justify-center w-6 h-6 mr-2 text-sm text-white transition-all duration-200 ease-in-out lg:h-20 lg:w-30"
                                                         alt="thumbnails" />
+                                                    <h6 class="mb-0 text-sm leading-normal ">
+                                                        {{ $teacher->name }}
+                                                    </h6>
                                                 </div>
                                             </td>
                                             <td
                                                 class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent">
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $teacher->name }}
+                                                    {{ $teacher->mapel }}
                                                 </h6>
                                             </td>
                                             <td class="p-2 align-middle whitespace-nowrap shadow-transparent">
                                                 <div class="flex gap-1 lg:gap-3">
-                                                    <a href="{{ route('admin.socialmedia.edit', $teacher->slug) }}"
+                                                    <a href="{{ route('admin.teacher.edit', $teacher->slug) }}"
                                                         class="inline-block my-auto text-xs text-center align-middle ease-in border-0 shadow-none cursor-pointer group leading-pro bg-yellow-400 lg:py-2 font-bold lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200">
                                                         Edit
                                                     </a>
-                                                    <form action="{{ route('admin.socialmedia.destroy', $teacher->slug) }}"
+                                                    <form action="{{ route('admin.teacher.destroy', $teacher->slug) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('DELETE')
