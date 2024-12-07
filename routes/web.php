@@ -51,9 +51,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('facility', FacilityController::class)->parameters([
         'facility' => 'slug'
     ]);
-    Route::resource('about', AboutController::class)->parameters([
-        'about' => 'slug'
-    ]);
+    Route::resource('about', AboutController::class);
     Route::resource('vision-mission', VisionController::class);
 });
 // Route::middleware([

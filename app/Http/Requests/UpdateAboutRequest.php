@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateFacilityRequest extends FormRequest
+class UpdateAboutRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,16 +28,16 @@ class UpdateFacilityRequest extends FormRequest
             'status_sk_akreditasi' => 'required', 'string', 'max:255',
             'jenjang_pendidikan' => 'required', 'string', 'max:255',
             'sk_pendirian' => 'required', 'string', 'max:255',
-            'tgl_sk_pendirian' => 'required', 'string', 'max:255',
-            'sk_operatsional' => 'required', 'string', 'max:255',
-            'tgl_sk_operational' => 'required', 'string', 'max:255',
+            'tgl_sk_pendirian' => 'required', 'date', 'max:255',
+            'sk_operasional' => 'required', 'string', 'max:255',
+            'tgl_sk_operasional' => 'required', 'date', 'max:255',
             'description' => 'required', 'string', 'max:255',
             'address' => 'required', 'string', 'max:255',
             'maps' => 'required', 'string', 'max:255',
             'jumlah_siswa' => 'required', 'string', 'max:255',
             'phone' => 'required', 'string', 'max:255',
-            'email' => 'required', 'string', 'max:255',
-            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:10240',
+            'email' => 'required', 'email', 'max:255',
+            'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg,svg', 'max:10240',
         ];
     }
 }

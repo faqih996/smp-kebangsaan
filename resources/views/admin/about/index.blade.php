@@ -30,7 +30,11 @@
                     <div class="flex-auto px-6 pt-6 pb-2">
                         <div class="w-full p-8 overflow-hidden text-center">
 
-
+                            @if ($about)
+                                <img src="{{ Storage::url($about->thumbnail) }}" alt="thumbnail"
+                                    class="rounded-md object-cover w-[160px] h-[90px] mb-2">
+                            @else
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -88,7 +88,7 @@
                                                     class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Tanggal
                                                     SK
                                                     Pendirian</label>
-                                                <input type="text" name="tgl_sk_pendirian" required autofocus
+                                                <input type="date" name="tgl_sk_pendirian" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -107,9 +107,9 @@
                                             <div class="mb-4">
                                                 <label for="tgl_sk_operasional"
                                                     class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">
-                                                    Tanggal SK Pendirian
+                                                    Tanggal SK Operasional
                                                 </label>
-                                                <input type="text" name="tgl_sk_operasional" required autofocus
+                                                <input type="date" name="tgl_sk_operasional" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -164,7 +164,7 @@
                                                     class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">
                                                     Phone
                                                 </label>
-                                                <input type="text" name="phone" required autofocus
+                                                <input type="number" name="phone" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -175,7 +175,7 @@
                                                     class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">
                                                     Email
                                                 </label>
-                                                <input type="text" name="email" required autofocus
+                                                <input type="email" name="email" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
