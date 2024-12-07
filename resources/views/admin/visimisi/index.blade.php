@@ -30,7 +30,13 @@
                     <div class="flex-auto px-6 pt-6 pb-2">
                         <div class="w-full p-8 overflow-hidden text-center">
                             <h3 class="lg:text-heading-7 text-heading-8">Visi</h3>
-                            <p class="mb-8 lg:text-heading-7 text-heading-10">{{ $vision->name }}</p>
+
+                            @if ($vision)
+                                <p class="mb-8 lg:text-heading-7 text-heading-10">{{ $vision->name }}</p>
+                            @else
+                                <p class="mb-8">Belum ada data</p>
+                            @endif
+
                             <h3 class="lg:text-heading-7 text-heading-8">Misi</h3>
 
                             @forelse ($missions as $index => $mission)
@@ -40,6 +46,7 @@
                                         {{ $mission->name }}</p>
                                 </div>
                             @empty
+                                <p class="mb-8">Belum ada data</p>
                             @endforelse
                         </div>
                     </div>

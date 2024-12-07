@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('jenjang_pendidikan')->nullable();
             $table->string('sk_pendirian')->nullable();
             $table->string('tgl_sk_pendirian')->nullable();
-            $table->string('sk_operatsional')->nullable();
-            $table->string('tgl_sk_operational')->nullable();
+            $table->string('sk_operasional')->nullable();
+            $table->string('tgl_sk_operasional')->nullable();
             $table->string('description');
             $table->string('address');
             $table->string('maps')->nullable();

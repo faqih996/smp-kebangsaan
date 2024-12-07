@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AboutController extends Controller
 {
@@ -12,7 +14,8 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $about = About::first();
+        return view('admin.about.index', compact('about'));
     }
 
     /**
@@ -20,7 +23,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.about.create');
     }
 
     /**
@@ -28,7 +31,17 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Start a database transaction
+        DB::transaction(function () use ($request) {
+            // Validate and retrieve the data from the request
+            $validated = $request->validated();
+
+            // Create the Vision instance
+            $about = About::create($validated);
+        });
+
+        // Redirect with success message
+        return redirect()->route('admin.about.index')->with('success', 'Data created successfully');
     }
 
     /**

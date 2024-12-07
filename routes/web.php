@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
@@ -49,6 +50,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     ]);
     Route::resource('facility', FacilityController::class)->parameters([
         'facility' => 'slug'
+    ]);
+    Route::resource('about', AboutController::class)->parameters([
+        'about' => 'slug'
     ]);
     Route::resource('vision-mission', VisionController::class);
 });
