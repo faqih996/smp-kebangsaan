@@ -19,7 +19,7 @@
     <div class="items-center block w-auto max-h-screen overflow-auto grow basis-full">
         <ul class="flex flex-col pl-0 mb-0">
             <li class="mt-0.5 w-full">
-                <a class="py-2.7 bg-blue-5 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 font-semibold text-slate-700 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.dashboard.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.dashboard.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -30,7 +30,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.about.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.about.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -42,7 +42,7 @@
 
 
             <li class="mt-0.5 w-full">
-                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.vision-mission.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.vision-mission.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -64,7 +64,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.teacher.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.teacher.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
@@ -75,7 +75,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.facility.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.facility.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -86,7 +86,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.extracurricular.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.extracurricular.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -97,7 +97,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.socialmedia.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.socialmedia.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -108,7 +108,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.socialmedia.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.socialmedia.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -124,7 +124,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.carousel.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.carousel.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
@@ -135,7 +135,7 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                <a class="py-2.7 {{ request()->routeIs('admin.category.*') ? 'bg-blue-5 font-bold text-blue-80' : 'text-slate-700' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 transition-colors"
                     href="{{ route('admin.category.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
