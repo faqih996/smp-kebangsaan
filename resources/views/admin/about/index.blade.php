@@ -117,7 +117,11 @@
                                                 <td class="px-6 py-4 whitespace-nowrap">{{ $about->tgl_sk_operasional }}
                                                 </td>
                                             </tr>
-                                        @else
+                                        </tbody>
+                                    </table>
+                                </div>
+                            @else
+                                <p>Belum ada data</p>
                             @endif
                         </div>
                     </div>

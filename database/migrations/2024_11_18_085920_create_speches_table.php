@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('thumbnail');
             $table->string('speaker_name');
+            $table->string('jabatan');
             $table->softDeletes();
             $table->timestamps();
         });

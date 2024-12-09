@@ -8,6 +8,7 @@ use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\SpeachController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\VisionController;
 use App\Models\Extracurricular;
@@ -52,6 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         'facility' => 'slug'
     ]);
     Route::resource('about', AboutController::class);
+    Route::resource('speach', SpeachController::class);
     Route::resource('vision-mission', VisionController::class);
 });
 // Route::middleware([

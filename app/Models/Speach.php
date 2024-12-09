@@ -16,13 +16,8 @@ class Speach extends Model
         'description',
         'thumbnail',
         'speaker_name',
+        'jabatan'
     ];
-
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
-    }
 
     public function news(): HasMany
     {
