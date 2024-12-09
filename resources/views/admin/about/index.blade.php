@@ -31,9 +31,93 @@
                         <div class="w-full p-8 overflow-hidden text-center">
 
                             @if ($about)
-                                <img src="{{ Storage::url($about->thumbnail) }}" alt="thumbnail"
-                                    class="rounded-md object-cover w-[160px] h-[90px] mb-2">
-                            @else
+                                <div class="px-6">
+                                    <img src="{{ Storage::url($about->thumbnail) }}" alt="thumbnail"
+                                        class="rounded-md object-cover w-[240px] h-[240px] mb-2 ">
+                                </div>
+
+                                {{-- create view table --}}
+                                <div class="w-1/2 p-6 overflow-hidden text-center">
+                                    <table class="w-full text-sm text-left text-gray-500 table-auto">
+                                        <thead class="text-xs text-gray-700 uppercase">
+                                            <tr>
+                                                <th scope="col" class="w-1/2 px-6 py-3">Detail Sekolah</th>
+                                                <th scope="col" class="px-6 py-3">SMP Kebangsaan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="text-gray-700 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray dark:text-gray-400">
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Deskripsi</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->description }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Maps</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->maps }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Jumlah Siswa</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->jumlah_siswa }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Alamat</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->address }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Nomor
+                                                    Telephone</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->phone }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Email</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">NPSN</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->npsn }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Akreditasi</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->akreditasi }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Nomor SK
+                                                    Akreditasi</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->no_sk_akreditasi }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Status SK
+                                                    Akreditasi</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->status_sk_akreditasi }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Jenjang
+                                                    Pendidikan</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->jenjang_pendidikan }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">SK
+                                                    Pendirian</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->sk_pendirian }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Tanggal SK
+                                                    Pendirian</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->sk_pendirian }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">SK Operasional</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->sk_operasional }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Tanggal SK
+                                                    Operasional</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->tgl_sk_operasional }}
+                                                </td>
+                                            </tr>
+                                        @else
                             @endif
                         </div>
                     </div>
