@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FacilityController;
@@ -51,6 +52,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     ]);
     Route::resource('facility', FacilityController::class)->parameters([
         'facility' => 'slug'
+    ]);
+    Route::resource('mail', ContactController::class)->parameters([
+        'mail' => 'slug'
     ]);
     Route::resource('about', AboutController::class);
     Route::resource('speach', SpeachController::class);
