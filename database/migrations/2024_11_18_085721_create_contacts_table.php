@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('category');
             $table->string('subject');
-            $table->text('description');
+            $table->longText('description');
             $table->softDeletes();
             $table->timestamps();
         });

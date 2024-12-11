@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Teacher')
+@section('title', 'Edit Facility')
 
 @section('content')
     <div class="w-full px-6 py-6 mx-auto">
@@ -18,8 +18,8 @@
                                 @endforeach
                             @endif
                             <div class="flex-auto p-6">
-                                <p class="text-sm leading-normal uppercase">Edit Teacher</p>
-                                <form method="POST" action="{{ route('admin.teacher.update', $teacher->slug) }}"
+                                <p class="text-sm leading-normal uppercase">Edit Facility</p>
+                                <form method="POST" action="{{ route('admin.facility.update', $facility->slug) }}"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
@@ -27,8 +27,8 @@
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
                                                 <label for="name"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Title</label>
-                                                <input type="text" name="name" value="{{ $teacher->name }}" required
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Name</label>
+                                                <input type="text" name="name" value="{{ $facility->name }}" required
                                                     autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
@@ -36,11 +36,20 @@
 
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
-                                                <label for="link"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Mata
-                                                    Pelajaran</label>
-                                                <input type="text" name="link" value="{{ $teacher->mapel }}" required
-                                                    autofocus
+                                                <label for="description"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Description</label>
+                                                <input type="text" name="description"
+                                                    value="{{ $facility->description }}" required autofocus
+                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                            <div class="mb-4">
+                                                <label for="description"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Quantity</label>
+                                                <input type="number" name="quantity" value="{{ $facility->quantity }}"
+                                                    required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -48,11 +57,11 @@
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
                                                 <label for="thumbnail"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Foto
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Thumbnail
                                                 </label>
                                                 <div class="items-center gap-10">
-                                                    <img src="{{ Storage::url($teacher->thumbnail) }}" alt="thumbnail"
-                                                        class="w-8 h-8 mb-2">
+                                                    <img src="{{ Storage::url($facility->thumbnail) }}" alt="thumbnail"
+                                                        class="rounded-md object-cover w-[160px] h-[90px] mb-2">
                                                     <input type="file" name="thumbnail"
                                                         class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                                 </div>

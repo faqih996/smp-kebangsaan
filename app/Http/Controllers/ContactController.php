@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,24 +31,25 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMailRequest $request)
+    public function store(StoreContactRequest $request)
     {
         DB::Transaction(function () use ($request) {
             $validated = $request->validated();
 
-            $validated['slug'] = Str::slug($validated['subject']);
-
-            $socialmedia = Contact::create($validated);
+            $message = Contact::create($validated);
         });
-        return redirect()->route('admin.socialmedia.index')->with('success', 'Social Media created successfully');
+
+        return redirect()->route('admin.mail.index')->with('success', 'Data created successfully');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Contact $contact)
+    public function show($slug)
     {
-        //
+        $mail = Contact::where('slug', $slug)->firstOrFail();
+
+        return view('admin.mail.show', compact('mail'));
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Mail')
+@section('title', 'Create Facility')
 
 @section('content')
     <div class="w-full px-6 py-6 mx-auto">
@@ -18,35 +18,11 @@
                                 @endforeach
                             @endif
                             <div class="flex-auto p-6">
-                                <p class="text-sm leading-normal uppercase">Tambah Email</p>
-                                <form method="POST" action="{{ route('admin.mail.store') }}" enctype="multipart/form-data">
+                                <p class="text-sm leading-normal uppercase">Tambah Fasilitas Baru</p>
+                                <form method="POST" action="{{ route('admin.facility.store') }}"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="flex flex-wrap -mx-3">
-                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                            <div class="mb-4">
-                                                <label for="subject"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Subject</label>
-                                                <input type="text" name="subject" required autofocus
-                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
-                                            </div>
-                                        </div>
-
-                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                            <div class="mb-4">
-                                                <label for="category"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Kategori</label>
-                                                <select type="text" name="category" required autofocus
-                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
-                                                <option value="Kerjasama">Kerjasama</option>
-                                                <option value="Pengajuan">Pengajuan</option>
-                                                <option value="Pendaftaran">Pendaftaran</option>
-                                                <option value="Pesan">Pesan</option>
-                                                <option value="kritik & saran">kritik & saran</option>
-                                                <option value="Laporan">Laporan</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
                                                 <label for="name"
@@ -58,30 +34,29 @@
 
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
-                                                <label for="phone"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Telephone</label>
-                                                <input type="number" name="phone" required autofocus
+                                                <label for="description"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Description</label>
+                                                <input type="text" name="description" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
-
-                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                            <div class="mb-4">
-                                                <label for="email"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">email</label>
-                                                <input type="email" name="email" required autofocus
-                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
-                                            </div>
-                                        </div>
-
-
 
                                         <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                             <div class="mb-4">
                                                 <label for="description"
-                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Pesan</label>
-                                                <textarea type="text" name="description" required autofocus
-                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease h-36 block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none"></textarea>
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Quantity</label>
+                                                <input type="number" name="quantity" required autofocus
+                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
+                                            <div class="mb-4">
+                                                <label for="thumbnail"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">Thumbnail
+                                                </label>
+                                                <input type="file" name="thumbnail" required autofocus
+                                                    class="focus:shadow-primary-outline  text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                             </div>
                                         </div>
 
