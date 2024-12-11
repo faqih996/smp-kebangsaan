@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notification;
+use App\Models\Information;
 use Illuminate\Http\Request;
 
-class NotificationController extends Controller
+class InformationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $informations = Information::orderByDesc('id')->get();
+
+        return view('admin.information.index', compact('informations'));
     }
 
     /**
@@ -34,7 +36,7 @@ class NotificationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Notification $notification)
+    public function show(Information $information)
     {
         //
     }
@@ -42,7 +44,7 @@ class NotificationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Notification $notification)
+    public function edit(Information $information)
     {
         //
     }
@@ -50,7 +52,7 @@ class NotificationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Notification $notification)
+    public function update(Request $request, Information $information)
     {
         //
     }
@@ -58,7 +60,7 @@ class NotificationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Notification $notification)
+    public function destroy(Information $information)
     {
         //
     }

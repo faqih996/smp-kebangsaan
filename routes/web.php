@@ -8,12 +8,15 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\SpeachController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\VisionController;
 use App\Models\Extracurricular;
+use App\Models\Information;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\ProfileInformationController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -55,6 +58,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     ]);
     Route::resource('mail', ContactController::class)->parameters([
         'mail' => 'slug'
+    ]);
+    Route::resource('information', InformationController::class)->parameters([
+        'information' => 'slug'
     ]);
     Route::resource('about', AboutController::class);
     Route::resource('speach', SpeachController::class);

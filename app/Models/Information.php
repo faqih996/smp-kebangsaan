@@ -2,22 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class Notification extends Model
+class Information extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
         'slug',
-        'category',
         'description',
-        'pelaksanaan',
-        'thumbnail'
+        'thumbnail',
+        'category',
+        'pelaksanaan'
     ];
 
     public function setNameAttribute($value)
