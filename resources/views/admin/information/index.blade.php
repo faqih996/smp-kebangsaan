@@ -18,18 +18,22 @@
                         </a>
                     </div>
                     <div class="flex-auto px-0 pt-0 pb-2">
-                        <div class="overflow-x-auto lg:p-2">
+                        <div class="overflow-x-auto lg:p-6">
 
                             <table class="items-center w-full mb-0 align-top border-collapse text-slate-500">
                                 <thead class="align-bottom">
                                     <tr>
                                         <th
                                             class="px-4 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                            Facility
+                                            name
+                                        </th>
+                                        <th
+                                            class="px-4 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
+                                            Kategori
                                         </th>
                                         <th
                                             class="px-4 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none lg:px-6 text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">
-                                            Quantity
+                                            Pelaksanaan
                                         </th>
 
                                         <th
@@ -42,24 +46,23 @@
                                     <tbody>
                                         <tr>
                                             <td
-                                                class="align-middle bg-transparent lg:p-2 whitespace-nowrap shadow-transparent">
-                                                <div class="flex items-center gap-2 px-2 py-1">
-                                                    <div>
-                                                        <img src="{{ Storage::url($information->thumbnail) }}"
-                                                            class="items-center justify-center hidden mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-md lg:h-20 lg:w-30 lg:block"
-                                                            alt="thumbnails" />
-                                                    </div>
-
-                                                    <h6 class="mb-0 text-sm leading-normal ">
-                                                        {{ $information->name }}
-                                                    </h6>
-
-                                                </div>
+                                                class="p-4 align-middle bg-transparent whitespace-nowrap shadow-transparent">
+                                                <h6 class="mb-0 text-sm leading-normal ">
+                                                    {{ $information->name }}
+                                                </h6>
                                             </td>
+
+                                            <td
+                                                class="p-4 align-middle bg-transparent whitespace-nowrap shadow-transparent">
+                                                <h6 class="mb-0 text-sm leading-normal ">
+                                                    {{ $information->category }}
+                                                </h6>
+                                            </td>
+
                                             <td
                                                 class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent">
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $information->quantity }}
+                                                    {{ $information->pelaksanaan }}
                                                 </h6>
                                             </td>
                                             <td

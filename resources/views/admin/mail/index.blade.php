@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Informations')
+@section('title', 'Mail')
 
 @section('content')
     <div class="w-full px-6 py-6 mx-auto">
@@ -10,11 +10,11 @@
                     class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl">
                     <div
                         class="flex items-center justify-between p-6 pb-0 mb-0 border-b-0 lg:p-6 border-b-solid rounded-t-2xl border-b-transparent">
-                        <h6 class="">Informations table</h6>
+                        <h6 class="">Mail table</h6>
                         <a href="{{ route('admin.mail.create') }}"
                             class="bg-blue-70 hover:bg-blue-90 px-6 text-xs rounded-1.8 py-3 lg:mr-10 inline-block whitespace-nowrap
                             text-center align-baseline font-bold uppercase leading-none text-white">
-                            Tambah Informasi
+                            Tambah Email
                         </a>
                     </div>
                     <div class="flex-auto px-0 pt-0 pb-2">
@@ -45,38 +45,38 @@
                                     </tr>
                                 </thead>
 
-                                @forelse ($informations as $information)
+                                @forelse ($mails as $mail)
                                     <tbody>
                                         <tr>
                                             <td
                                                 class="align-middle bg-transparent lg:p-2 whitespace-nowrap shadow-transparent">
 
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $information->name }}
+                                                    {{ $mail->name }}
                                                 </h6>
 
                                             </td>
                                             <td
                                                 class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent">
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $information->subject }}
+                                                    {{ $mail->subject }}
                                                 </h6>
                                             </td>
                                             <td
                                                 class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent">
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $information->category }}
+                                                    {{ $mail->category }}
                                                 </h6>
                                             </td>
                                             <td
                                                 class="p-2 text-sm leading-normal text-center align-middle bg-transparent whitespace-nowrap shadow-transparent">
                                                 <h6 class="mb-0 text-sm leading-normal ">
-                                                    {{ $information->created_at->format('d M Y') }}
+                                                    {{ $mail->created_at->format('d M Y') }}
                                                 </h6>
                                             </td>
                                             <td class="p-2 align-middle whitespace-nowrap shadow-transparent">
                                                 <div class="flex gap-1 lg:gap-3">
-                                                    <a href="{{ route('admin.mail.show', $information->slug) }}"
+                                                    <a href="{{ route('admin.mail.show', $mail->slug) }}"
                                                         class="inline-block my-auto text-xs text-center align-middle ease-in border-0 shadow-none cursor-pointer group leading-pro bg-yellow-400 lg:py-2 font-bold lg:px-4 py-1 px-2 rounded-md text-black ease-bounce text-2xs group-hover:translate-x-1.25 ni-bold-right transition-all duration-200">
                                                         Lihat
                                                     </a>
