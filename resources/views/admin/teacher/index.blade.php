@@ -14,7 +14,7 @@
                         <a href="{{ route('admin.teacher.create') }}"
                             class="bg-blue-70 hover:bg-blue-90 px-3 text-xs rounded-1.8 py-3 lg:mr-10 inline-block whitespace-nowrap
                             text-center align-baseline font-bold uppercase leading-none text-white">
-                            Tambah Guru Baru
+                            Tambah Baru
                         </a>
                     </div>
                     <div class="flex-auto px-0 pt-0 pb-2">

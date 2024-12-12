@@ -156,7 +156,7 @@
 
                                     <div class="flex items-center justify-end mt-4 z-200">
                                         <button type="submit"
-                                            class="px-6 py-4 font-bold text-green-100 rounded-md bg-blue-70">
+                                            class="px-3 py-3 font-bold text-white rounded-md bg-green-600">
                                             Update
                                         </button>
                                     </div>
