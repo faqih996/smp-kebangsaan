@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -42,9 +43,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::resource('carousel', CarouselController::class)->parameters([
-    'carousel' => 'slug']);
+        'carousel' => 'slug'
+    ]);
     Route::resource('category', CategoryController::class)->parameters([
-        'category' => 'slug']);
+        'category' => 'slug'
+    ]);
     Route::resource('socialmedia', SocialMediaController::class)->parameters([
         'socialmedia' => 'slug'
     ]);
@@ -66,6 +69,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('promotion', PromotionController::class)->parameters([
         'promotion' => 'slug'
     ]);
+    Route::resource('article', ArticleController::class)->parameters([
+        'article' => 'slug'
+    ]);
 
     Route::resource('about', AboutController::class);
     Route::resource('speach', SpeachController::class);
@@ -76,7 +82,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 //     config('jetstream.auth_session'),
 //     'verified',
 // ])->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('dashboard');
-//     })->name('dashboard');
+    // Route::get('/profile', function () {
+    //     return view('dashboard');
+    // })->name('profile');
 // });

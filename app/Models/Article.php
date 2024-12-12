@@ -18,12 +18,12 @@ class Article extends Model
         'category_id',
         'description',
         'is_featured',
+        'path_video',
         'thumbnail1',
         'thumbnail2',
         'thumbnail3',
         'thumbnail4',
         'thumbnail5',
-        'path_video',
     ];
 
     public function setNameAttribute($value)
