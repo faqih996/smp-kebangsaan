@@ -9,6 +9,7 @@ use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\SpeachController;
 use App\Http\Controllers\TeacherController;
@@ -62,6 +63,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('information', InformationController::class)->parameters([
         'information' => 'slug'
     ]);
+    Route::resource('promotion', PromotionController::class)->parameters([
+        'promotion' => 'slug'
+    ]);
+
     Route::resource('about', AboutController::class);
     Route::resource('speach', SpeachController::class);
     Route::resource('vision-mission', VisionController::class);

@@ -13,15 +13,17 @@ class Promotion extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name',
+        'title',
+        'subtitle',
         'slug',
+        'link',
         'thumbnail',
         'path_video',
     ];
 
-    public function setNameAttribute($value)
+    public function setTitleAttribute($value)
     {
-        $this->attributes['name'] = $value;
+        $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
 

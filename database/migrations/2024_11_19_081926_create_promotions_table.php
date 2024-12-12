@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
+            $table->string('subtitle');
             $table->string('slug');
+            $table->string('link');
             $table->string('thumbnail');
             $table->string('path_video');
             $table->softDeletes();
