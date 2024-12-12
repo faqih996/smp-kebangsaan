@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePromotionRequest;
+use App\Http\Requests\UpdatePromotionRequest;
 use App\Models\benefitPromotion;
 use App\Models\Promotion;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use PhpParser\Node\Stmt\TryCatch;
 
 class PromotionController extends Controller
 {
@@ -86,9 +90,49 @@ class PromotionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(request $request, $slug)
+    public function update(UpdatePromotionRequest $request, $slug)
     {
-        //
+
+        $promotion = Promotion::where('slug', $slug)->firstOrFail();
+
+        DB::transaction(function () use ($request, $promotion) {
+
+            try{
+                $validated = $request->validated();
+
+                if ($request->hasFile('thumbnail')) {
+                    $thumbnailPath = $request->file('thumbnail')->store('thumbnails', 'public');
+                    $validated['thumbnail'] = $thumbnailPath;
+                }
+
+                $promotion->update($validated);
+
+                foreach ($validated['benefits'] as $key => $value) {
+                    $benefit = benefitPromotion::find($key);
+                    if ($benefit) {
+                        $benefit->name = $value;
+                        $benefit->save();
+                    }
+                }
+
+                // Tambahkan misi baru
+                if (isset($validated['benefit'])) {
+                    foreach ($validated['benefit'] as $key => $value) {
+                        $newPromotion = new benefitPromotion();
+                        $newPromotion->promotion_id = $promotion['id'];
+                        $newPromotion->name = $value;
+                        $newPromotion->save();
+                    }
+                }
+            }catch(Exception $e){
+                DB::rollBack();
+
+                return redirect()->route('admin.promotion.index')->with('error', 'Failed to delete. Please try again later.');
+            }
+        });
+
+        return redirect()->route('admin.promotion.index')->with('success', 'Data created successfully');
+
     }
 
     /**
@@ -96,11 +140,23 @@ class PromotionController extends Controller
      */
     public function destroy($slug)
     {
-        $carousel = Promotion::where('slug', $slug)->firstOrFail();
+        $promotion = Promotion::where('slug', $slug)->firstOrFail();
+        $benefits = benefitPromotion::where('promotion_id', $promotion['id'])->get();
+
         DB::beginTransaction();
 
         try {
-            $carousel->delete();
+            $promotion->delete();
+            //delete all benefit promotion related with this promotion
+            foreach ($benefits as $benefit) {
+                $benefit->delete();
+            }
+
+            //delete all image related with this promotion
+            if($promotion->thumbnail){
+                Storage::delete('public/thumbnails/'. $promotion->thumbnail);
+            }
+
             DB::commit();
 
             return redirect()->route('admin.promotion.index')->with('success', 'Data deleted successfully');

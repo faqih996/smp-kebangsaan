@@ -27,8 +27,8 @@ class UpdatePromotionRequest extends FormRequest
             'link' => 'required', 'string', 'max:255',
             'thumbnail' => 'sometimes', 'image', 'mimes:png,jpg,jpeg,svg', 'max:10240',
             'path_video' => 'required', 'string', 'max:255',
-            'benefit' => 'required|array|min:1',  // Make sure 'mission' is an array
-            'benefit.*' => 'required|string|max:255',  // Validate each mission item
+            'benefit' => 'array',  // Validasi untuk array benefit
+            'benefit.*' => 'string',// Validate each mission item
             'benefits' => 'array',  // Validasi untuk array benefits
             'benefits.*' => 'string',
         ];

@@ -88,14 +88,9 @@ class VisionController extends Controller
      */
     public function update(UpdateVisionRequest $request, Vision $vision, $id)
     {
-        // \DB::enableQueryLog();
 
-        // Validate and retrieve the data from the request
         $validated = $request->validated();
 
-        //  dd($validated)
-
-        // Start a database transaction
         DB::transaction(function () use ($validated, $vision, $id) {
             try {
                 $vision->update($validated);
@@ -105,7 +100,7 @@ class VisionController extends Controller
                     Mision::whereIn('id', $deleteMissions)->delete();
                 }
 
-                // Proses update misi yang ada
+
                 foreach ($validated['missions'] as $key => $value) {
                     $mission = Mision::find($key);
                     if ($mission) {
@@ -127,14 +122,11 @@ class VisionController extends Controller
             } catch (\Exception $e) {
                 DB::rollBack();
 
-                return redirect()->route('admin.visimisi.index')->with('error', 'Failed to delete. Please try again later.');
+                return redirect()->route('admin.vision-mission.index')->with('error', 'Failed to delete. Please try again later.');
             }
         });
 
-        // Menampilkan query log untuk melihat query yang dijalankan
-        // dd(\DB::getQueryLog());  // Periksa log query setelah transaksi selesai
 
-        // Redirect with success message
         return redirect()->route('admin.vision-mission.index')->with('success', 'Visi Misi created successfully');
     }
 
