@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExtracurricularController;
 use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\SocialMediaController;
@@ -74,7 +75,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])
     Route::resource('article', ArticleController::class)->parameters([
         'article' => 'slug'
     ]);
-    Route::resource('galleries', Galler::class)->parameters([
+    Route::resource('gallery', GalleryController::class)->parameters([
         'article' => 'slug'
     ]);
 
