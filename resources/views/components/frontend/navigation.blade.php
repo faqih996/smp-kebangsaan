@@ -251,7 +251,7 @@
                             </nav>
                         </div>
                         <div class="justify-end hidden gap-3 pr-16 sm:flex lg:pr-0">
-                            <a href="javascript:void(0)"
+                            <a href="{{ route('login') }}"
                                 class="rounded-lg bg-blue-90 px-5 py-2.5 text-base font-medium text-white">
                                 Login
                             </a>

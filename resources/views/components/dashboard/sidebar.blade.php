@@ -180,7 +180,7 @@
 
             <li class="mt-0.5 w-full">
                 <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                    href="./pages/profile.html">
+                    href="{{ route('admin.article.index') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i>
@@ -191,7 +191,7 @@
 
             <li class="mt-0.5 w-full">
                 <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                    href="./pages/profile.html">
+                    href="{{ route('admin.dashboard.profile') }}">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-slate-700 ni ni-single-02"></i>
@@ -201,8 +201,8 @@
             </li>
 
             <li class="mt-0.5 w-full">
-                <a class=" py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
-                    href="./pages/sign-in.html">
+                <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors"
+                    href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <div
                         class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                         <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-copy-04"></i>
@@ -211,8 +211,24 @@
                 </a>
             </li>
 
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                @csrf
+            </form>
+
         </ul>
     </div>
 
 </aside>
 <!-- end sidenav -->
+
+@push('after-script')
+    <script type="text/javascript">
+        // add row
+        document.querySelectorAll('a[onclick]').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.getElementById('logout-form').submit();
+            });
+        });
+    </script>
+@endpush

@@ -39,8 +39,10 @@ Route::get('information', [FrontendController::class, 'information'])->name('fro
 Route::get('article', [FrontendController::class, 'article'])->name('front.article');
 // Route::get('article/detail/{article:slug}', [FrontendController::class, 'articleDetail'])->name('front.article.detail');
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+    Route::get('profile', [DashboardController::class, 'profile'])->name('dashboard.profile');
 
     Route::resource('carousel', CarouselController::class)->parameters([
         'carousel' => 'slug'
@@ -72,17 +74,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('article', ArticleController::class)->parameters([
         'article' => 'slug'
     ]);
+    Route::resource('galleries', Galler::class)->parameters([
+        'article' => 'slug'
+    ]);
 
     Route::resource('about', AboutController::class);
     Route::resource('speach', SpeachController::class);
     Route::resource('vision-mission', VisionController::class);
 });
+
+
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
 //     'verified',
 // ])->group(function () {
-    // Route::get('/profile', function () {
-    //     return view('dashboard');
-    // })->name('profile');
+//     Route::get('/profile', function () {
+//         return view('dashboard');
+//     })->name('profile');
 // });
