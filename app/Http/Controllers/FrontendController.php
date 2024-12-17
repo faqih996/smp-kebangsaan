@@ -31,21 +31,33 @@ class FrontendController extends Controller
         $socmeds = SocialMedia::orderByDesc('id')->get();
         $contacts = Contact::orderByDesc('id')->get();
 
-        $articles = Article::orderByDesc('id')->get();
+        $featured_articles = Article::orderByDesc('id')->with(['Category'])
+        ->where('is_featured', 'featured')
+        ->inRandomOrder()
+        ->get();
+
+        $articles = Article::with(['Category'])
+        ->where('is_featured', 'not_featured')
+        ->latest()
+        ->take(3)
+        ->get();
+
         $article = Article::count();
 
         $informations = Information::orderByDesc('id')->get();
         $information = Information::count();
 
+        $promotions = Promotion::orderByDesc('id')->get();
+        $promotion = Promotion::count();
+
         $contact = Contact::count();
         $categories = Category::count();
         $teachers = Teacher::count();
         $facilities = Facility::count();
-        $promotions = Promotion::count();
         $extracurriculars = Extracurricular::count();
 
         return view('frontend.index', compact('user', 'about', 'contacts', 'socmeds', 'articles', 'article', 'informations',
-            'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
+            'featured_articles','promotions', 'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
         ));
     }
 

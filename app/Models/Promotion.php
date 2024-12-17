@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class Promotion extends Model
 {
-    use HasFactory, SoftDeletes;
+    use SoftDeletes;
 
     protected $fillable = [
         'title',
