@@ -43,8 +43,6 @@ class CarouselController extends Controller
                 $validated['thumbnail'] = $thumbnailPath;
             }
 
-            $validated['slug'] = Str::slug($validated['name']);
-
             $carousel = Carousel::create($validated);
 
         });

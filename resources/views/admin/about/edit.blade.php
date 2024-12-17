@@ -137,6 +137,14 @@
                                             </div>
 
                                             <div class="mb-4">
+                                                <label for="jumlah_kelas"
+                                                    class="block text-sm font-bold text-slate-700">Jumlah Kelas</label>
+                                                <input type="number" id="jumlah_kelas" name="jumlah_kelas"
+                                                    value="{{ $about->jumlah_kelas }}"
+                                                    class="block w-full px-3 py-2 text-black border border-gray-300 rounded-lg focus:ring-blue-500">
+                                            </div>
+
+                                            <div class="mb-4">
                                                 <label for="phone" class="block text-sm font-bold text-slate-700">Nomor
                                                     Telephone</label>
                                                 <input type="number" id="phone" name="phone"
@@ -169,7 +177,7 @@
 
                                     <div class="flex items-end mt-4 z-200">
                                         <button type="submit"
-                                            class="px-3 py-3 font-bold text-white rounded-md bg-green-600">
+                                            class="px-3 py-3 font-bold text-white bg-green-600 rounded-md">
                                             Simpan
                                         </button>
                                     </div>

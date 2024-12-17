@@ -23,6 +23,7 @@ class About extends Model
         'address',
         'maps',
         'jumlah_siswa',
+        'jumlah_kelas',
         'phone',
         'email',
         'thumbnail',

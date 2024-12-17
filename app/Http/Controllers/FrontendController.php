@@ -2,13 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\Article;
+use App\Models\Carousel;
+use App\Models\Category;
+use App\Models\Contact;
+use App\Models\Extracurricular;
+use App\Models\Facility;
+use App\Models\Information;
+use App\Models\Promotion;
+use App\Models\SocialMedia;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $user = Auth::user();
+        $about = About::first();
+
+        $carousels = Carousel::where('is_active', 'active')
+        ->inRandomOrder()
+        ->take(5)
+        ->get();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+        $contacts = Contact::orderByDesc('id')->get();
+
+        $articles = Article::orderByDesc('id')->get();
+        $article = Article::count();
+
+        $informations = Information::orderByDesc('id')->get();
+        $information = Information::count();
+
+        $contact = Contact::count();
+        $categories = Category::count();
+        $teachers = Teacher::count();
+        $facilities = Facility::count();
+        $promotions = Promotion::count();
+        $extracurriculars = Extracurricular::count();
+
+        return view('frontend.index', compact('user', 'about', 'contacts', 'socmeds', 'articles', 'article', 'informations',
+            'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
+        ));
     }
 
     public function about()

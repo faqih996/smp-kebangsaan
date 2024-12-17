@@ -45,8 +45,7 @@
                                                 <th scope="col" class="px-6 py-3">SMP Kebangsaan</th>
                                             </tr>
                                         </thead>
-                                        <tbody
-                                            class="text-gray-700 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray dark:text-gray-400">
+                                        <tbody class="text-gray-700 bg-white divide-y divide-gray-200">
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap">Deskripsi</td>
                                                 <td class="px-6 py-4 whitespace-nowrap">{{ $about->description }}</td>
@@ -58,6 +57,10 @@
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap">Jumlah Siswa</td>
                                                 <td class="px-6 py-4 whitespace-nowrap">{{ $about->jumlah_siswa }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-6 py-4 whitespace-nowrap">Jumlah Kelas</td>
+                                                <td class="px-6 py-4 whitespace-nowrap">{{ $about->jumlah_kelas }}</td>
                                             </tr>
                                             <tr>
                                                 <td class="px-6 py-4 whitespace-nowrap">Alamat</td>

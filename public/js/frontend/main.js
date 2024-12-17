@@ -1,7 +1,7 @@
 // Wait for the DOM to load
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+
   // Function to animate the counting
   function animateCount(element, targetNumber, duration) {
     let startNumber = 0;

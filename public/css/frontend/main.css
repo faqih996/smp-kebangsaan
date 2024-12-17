@@ -5,7 +5,7 @@
 
 /* Track */
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(238, 240, 247, 1); 
+    background: rgba(238, 240, 247, 1);
     border: solid 2.5px white;
 }
 
@@ -17,7 +17,7 @@
 
 /* Handle on hover */
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(4, 102, 200); 
+    background: rgba(4, 102, 200);
 }
 
 #Content-wrapper{
@@ -50,7 +50,7 @@
 #Content-wrapper h1, #Content-wrapper h2, #Content-wrapper h3, #Content-wrapper h4, #Content-wrapper h5, #Content-wrapper h6 {
     font-weight: 700;
     font-size: unset;
-} 
+}
 
 #Content-wrapper h2{
     font-size: 40px;
@@ -91,4 +91,9 @@
     object-fit: contain;
     object-position: left;
     border-radius: 20px;
+}
+
+.x-announcement {
+  background-image: url("/assets/images/bg-pengumuman.png");
+  background-size: cover;
 }

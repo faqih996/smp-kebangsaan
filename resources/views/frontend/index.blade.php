@@ -4,57 +4,52 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section id="Hero" class="mt-[2px]">
-        <div class="absolute z-10 w-full text-center lg:mt-[250px] mt-[150px]">
-            <h1 class="items-center gap-4 font-bold text-center text-white lg:text-heading-1 text-heading-3">
-                SMP Kebangsaan
-            </h1>
-            <p class="text-center text-white text-heading-8">
-                Pondok Aren - Tangerang Selatan
-            </p>
-        </div>
+    <section id="Hero" class="mt-[1px]">
         <div class="w-full main-carousel">
-            <div class="featured-news-card relative w-full lg:h-[750px] h-[450px] flex shrink-0 overflow-hidden">
-                <img src="assets/images/thumbnails/th-featured-1.png" class="absolute object-cover w-full h-full thumbnail"
-                    alt="icon" />
-                <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"></div>
-                <div class="card-detail max-w-[1130px] w-full mx-auto flex items-end justify-between pb-10 relative z-20">
-                    <div class="flex flex-col gap-[10px]">
-                        <p class="font-bold text-4xl leading-[45px] text-white two-lines transition-all duration-300">
-                            Generation Z Prefer Remote Working Than Big Salary
-                        </p>
-                    </div>
-                    <div class="prevNextButtons flex items-center gap-4 mb-[60px]">
-                        <button
-                            class="button--previous appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
-                            <img src="assets/images/icons/arrow.svg" alt="arrow" />
-                        </button>
-                        <button
-                            class="button--next appearance-none w-[38px] h-[38px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 rotate-180">
-                            <img src="assets/images/icons/arrow.svg" alt="arrow" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+            @forelse ($carousels as $carousel)
+                <div class="featured-news-card relative w-full h-[750px] flex shrink-0 overflow-hidden">
+                    <img src="{{ Storage::url($carousel->thumbnail) }}" class="absolute object-cover w-full h-full thumbnail"
+                        alt="icon" />
 
-            <div class="featured-news-card relative w-full lg:h-[750px] h-[450px] flex shrink-0 overflow-hidden">
-                <img src="assets/images/thumbnails/th-cyclist.png" class="absolute object-cover w-full h-full thumbnail"
-                    alt="icon" />
-                <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"></div>
-                <div class="card-detail max-w-[1130px] w-full mx-auto flex justify-end pb-10 relative z-20">
-                    <div class="prevNextButtons flex items-end lg:gap-4 gap-2 lg:mb-[60px] mb-[30px] px-4 lg:px-0">
-                        <button
-                            class="button--previous appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-blue-90 transition-all duration-300">
-                            <img src="assets/images/icons/arrow.svg" alt="arrow" />
-                        </button>
-                        <button
-                            class="button--next appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-blue-90 transition-all duration-300 rotate-180">
-                            <img src="assets/images/icons/arrow.svg" alt="arrow" />
-                        </button>
+                    <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(37,89,187,0.9)] absolute z-10">
+                    </div>
+
+                    <div class="card-detail max-w-[1130px] w-full mx-auto flex justify-end pb-10 relative z-20">
+
+                        <div class="relative z-10 w-full text-center lg:mt-[250px] mt-[150px]">
+                            <h1
+                                class="items-center gap-4 font-bold text-center text-white lg:text-heading-1 text-heading-3">
+                                SMP Kebangsaan
+                            </h1>
+                            <p class="text-center text-white text-heading-8">
+                                Pondok Aren - Tangerang Selatan
+                            </p>
+                            <p class="mt-10 font-semibold text-center text-white text-heading-7">
+                                {{ $carousel->name }}
+                            </p>
+                            <p class="text-center text-white text-heading-8">
+                                {{ $carousel->description }}
+                            </p>
+                        </div>
+
+                        <div class="prevNextButtons flex items-end lg:gap-4 gap-2 lg:mb-[60px] mb-[30px] px-4 lg:px-0">
+                            <button
+                                class="button--previous appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-blue-90 transition-all duration-300">
+                                <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
+                            </button>
+                            <button
+                                class="button--next appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-blue-90 transition-all duration-300 rotate-180">
+                                <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @empty
+                <p>Belum ada data Terbaru.</p>
+            @endforelse
+
         </div>
+
     </section>
 
     <!-- counter Section -->
@@ -63,8 +58,8 @@
         <div class="grid lg:grid-cols-6 grid-cols-3 lg:gap-[30px] gap-[10px] justify-between lg:items-center">
             <div class="p-[26px_20px] flex flex-col items-center lg:gap-4 gap-2 transition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        35
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $facilities }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
                         Pengajar
@@ -74,19 +69,19 @@
 
             <div class="p-[28px_20px] flex flex-col items-center lg:trans gap-2ition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        4
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $facilities }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
-                        Staff
+                        Perstasi
                     </p>
                 </div>
             </div>
 
             <div class="p-[26px_20px] flex flex-col items-center lg:gap-4 gap-2 transition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        365
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $about->jumlah_siswa }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
                         Siswa
@@ -96,8 +91,8 @@
 
             <div class="p-[26px_20px] flex flex-col items-center lg:gap-4 gap-2 transition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        17
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $about->jumlah_kelas }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
                         Ruang Kelas
@@ -107,8 +102,8 @@
 
             <div class="p-[26px_20px] flex flex-col items-center lg:gap-4 gap-2 transition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        10
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $facilities }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
                         Fasilitas
@@ -118,8 +113,8 @@
 
             <div class="p-[26px_20px] flex flex-col items-center lg:gap-4 gap-2 transition-all duration-300">
                 <div class="flex flex-col gap-1 text-center">
-                    <p class="font-semibold counter lg:text-heading-2 text-heading-8">
-                        7
+                    <p class="font-semibold counter lg:text-heading-2 text-heading-8 text-blue-90">
+                        {{ $extracurriculars }}
                     </p>
                     <p class="lg:text-heading-9 text-heading-12 text-[#A3A6AE]">
                         Extrakulikuler
@@ -216,7 +211,7 @@
     </section>
 
     <!-- pengumuman section -->
-    <section id="Up-to-date" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] lg:mt-[70px] mt-[30px] px-4 lg:px-0">
+    {{-- <section id="Up-to-date" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] lg:mt-[70px] mt-[30px] px-4 lg:px-0">
         <div class="flex items-center justify-between">
             <div>
                 <h2 class="font-bold lg:text-heading-6 text-heading-8 leading-[39px]">
@@ -295,54 +290,60 @@
                 </div>
             </a>
         </div>
+    </section> --}}
+
+    <section class="w-full mt-28 lg:mt-[70px] x-announcement">
+        <div class="container pb-16 pt-9 max-w-[1130px] mx-auto flex flex-col gap-[30px] px-4 lg:px-0">
+            <div class="flex items-center justify-between mb-10">
+                <div>
+                    <h3 class="text-xl font-semibold text-white sm:text-2xl">
+                        Pengumuman
+                    </h3>
+                    <p class="text-sm font-semibold text-white sm:text-base">
+                        Informasi Kegiatan SMP Kebangsaan
+                    </p>
+                </div>
+                {{-- <div class="prevNextButtons flex items-end lg:gap-4 gap-2 lg:mb-[60px] mb-[30px] px-4 lg:px-0">
+                    <button
+                        class="button-previous appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-white transition-all duration-300">
+                        <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
+                    </button>
+                    <button
+                        class="button-next appearance-none lg:w-[38px] lg:h-[38px] w-[24px] h-[24px] flex items-center justify-center rounded-full shrink-0 ring-1 ring-white hover:ring-2 hover:ring-white transition-all duration-300 rotate-180">
+                        <img src="{{ asset('assets/images/icons/arrow.svg') }}" alt="arrow" />
+                    </button>
+                </div> --}}
+            </div>
+
+
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
+                @forelse ($informations as $information)
+                    <div class="py-[18px] px-7 rounded-[20px] border border-xneutral-100 bg-white">
+                        <a href="" class="mb-4 text-base font-semibold sm:text-lg text-xneutral-400 line-clamp-2">
+                            {{ $information->name }}
+                        </a>
+                        <p class=" text-xs sm:text-sm font-semibold text-xneutral-200 mb-1.5">
+                            {{ $information->description }}
+                        </p>
+                        <p class="text-xs font-semibold text-xneutral-200">
+                            {{ $information->pelaksanaan }} }}
+                        </p>
+                    </div>
+                @empty
+                    <p>Belum ada data</p>
+                @endforelse ($informations as $information)
+
+            </div>
+
+        </div>
     </section>
 
-    <!-- about us -->
+
     <section id="about-us"
-        class="lg:max-w-[1200px] mx-auto md:flex lg:justify-between items-center lg:p-[60px_100px] lg:mt-[50px] mt-[30px] px-4 lg:px-0">
+        class="lg:max-w-[1200px] mx-auto md:flex lg:justify-between items-center lg:p-[60px_100px] lg:mt-[30px] mt-[30px] px-4 lg:px-0">
         <div class="relative lg:mr-10">
             <div class="lg:w-[355px] lg:h-[488px] w-[255px] h-[288px] items-center mx-auto lg:mx-0">
                 <img src="assets/images/thumbnails/image1.png" alt="icon" />
-            </div>
-
-            <div
-                class="lg:absolute lg:w-[250px] transform lg:-translate-y-1/2 lg:top-[70%] lg:left-[200px] border bg-white lg:z-10 rounded-[20px] gap-4 p-4 flex flex-col shadow-md">
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Gedung milik sendiri</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Laboratorium</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Ruang kelas ber-AC</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Wi-fi Gratis</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Lapangan olahraga</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div>
-                        <img src="assets/icons/ic_check.svg" alt="icon" />
-                    </div>
-                    <p class="font-medium">Diawasi CCTV</p>
-                </div>
             </div>
         </div>
 

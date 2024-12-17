@@ -3,27 +3,45 @@
     <nav id="social-media"
         class="xl:max-w-[1200px] mx-auto flex justify-between items-center xl:mt-[10px] mt-[5px] lg:px-4 px-2">
         <div class="logo-container flex lg:gap-[10px] gap-[8px] items-center">
-            <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
-                <img src="assets/icons/phone-call.svg" alt="icon" />
-            </div>
-            <p class="text-heading-12 lg:text-heading-8">0812192372</p>
+            @if ($about)
+                <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
+                    <img src="assets/icons/phone-call.svg" alt="icon" />
+                </div>
+                <p class="text-heading-12 lg:text-heading-8">{{ $about->phone }}</p>
 
-            <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
-                <img src="assets/icons/email.svg" alt="icon" />
-            </div>
-            <p class="text-heading-12 lg:text-heading-8">example@example.com</p>
+                <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
+                    <img src="assets/icons/email.svg" alt="icon" />
+                </div>
+                <p class="text-heading-12 lg:text-heading-8">{{ $about->email }}</p>
+            @else
+                <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
+                    <img src="assets/icons/phone-call.svg" alt="icon" />
+                </div>
+                <p class="text-heading-12 lg:text-heading-8">-</p>
+
+                <div class="flex w-4 h-4 lg:w-6 lg:h-6 shrink-0">
+                    <img src="assets/icons/email.svg" alt="icon" />
+                </div>
+                <p class="text-heading-12 lg:text-heading-8">-</p>
+            @endif
         </div>
 
         <div class="flex items-center gap-2 md:flex">
-            <a href="#" class="flex w-4 h-4 lg:w-6 lg:h-6">
-                <img src="assets/icons/social.svg" alt="icon" />
-            </a>
-            <a href="#" class="flex w-4 h-4 lg:w-6 lg:h-6">
-                <img src="assets/icons/tiktok.svg" alt="icon" />
-            </a>
-            <a href="#" class="flex w-4 h-4 lg:w-6 lg:h-6">
-                <img src="assets/icons/youtube.svg" alt="icon" />
-            </a>
+            @forelse ($socmeds as $socmed)
+                <a href="{{ url($socmed->link) }}" target="blank" class="flex w-4 h-4 lg:w-6 lg:h-6">
+                    <img src="{{ Storage::url($socmed->icon) }}" alt="icon" />
+                </a>
+            @empty
+                <a href="#" target="blank" class="flex w-4 h-4 lg:w-6 lg:h-6">
+                    <img src="assets/icons/social.svg" alt="icon" />
+                </a>
+                <a href="#" target="blank" class="flex w-4 h-4 lg:w-6 lg:h-6">
+                    <img src="assets/icons/tiktok.svg" alt="icon" />
+                </a>
+                <a href="#" target="blank" class="flex w-4 h-4 lg:w-6 lg:h-6">
+                    <img src="assets/icons/youtube.svg" alt="icon" />
+                </a>
+            @endforelse
         </div>
     </nav>
 
@@ -133,8 +151,9 @@
                                                         <a href="{{ route('front.greeting') }}"
                                                             class="flex flex-col gap-4 p-4 duration-200 rounded-lg group hover:bg-gray-1 lg:flex-row">
                                                             <div class="text-primary">
-                                                                <svg width="24" height="24" viewBox="0 0 24 24"
-                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <svg width="24" height="24"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
                                                                     <g clip-path="url(#clip0_2436_4206)">
                                                                         <path
                                                                             d="M12 23.325C9.11255 23.325 6.18755 22.2375 3.97505 20.025C1.83755 17.8875 0.675049 15.0375 0.675049 12C0.675049 8.9625 1.83755 6.1125 4.01255 3.975C6.11255 1.8375 8.96255 0.675003 12 0.675003C15.0375 0.675003 17.8876 1.8375 20.025 4.0125C24.4501 8.4375 24.4501 15.6375 20.025 20.0625C17.8125 22.2375 14.8875 23.325 12 23.325ZM7.95005 20.775C10.5 21.9375 13.4625 21.9375 16.05 20.775L12 16.725L7.95005 20.775ZM4.08755 17.55C4.38755 18 4.76255 18.4125 5.17505 18.825C5.58755 19.2375 6.00005 19.575 6.45005 19.9125L10.5375 15.825C10.0125 15.6375 9.52505 15.3 9.11255 14.8875C8.70005 14.475 8.40005 13.9875 8.17505 13.4625L4.08755 17.55ZM13.4625 15.825L17.55 19.9125C18 19.6125 18.4125 19.2375 18.8251 18.825C19.2375 18.4125 19.575 18 19.9125 17.55L15.825 13.4625C15.6375 13.9875 15.3 14.475 14.8875 14.8875C14.475 15.3 13.9875 15.6 13.4625 15.825ZM3.22505 7.95C2.66255 9.1875 2.32505 10.575 2.32505 12C2.32505 13.425 2.62505 14.775 3.22505 16.05L7.27505 12L3.22505 7.95ZM16.725 12L20.775 16.05C21.9375 13.5 21.9375 10.5375 20.775 7.95L16.725 12ZM12 9.6C11.3625 9.6 10.7625 9.8625 10.3125 10.3125C9.86255 10.7625 9.60005 11.3625 9.60005 12C9.60005 12.6375 9.86255 13.2375 10.3125 13.6875C10.7625 14.1375 11.3625 14.4 12 14.4C12.6375 14.4 13.2375 14.1375 13.6875 13.6875C14.1375 13.2375 14.4 12.6375 14.4 12C14.4 11.3625 14.1375 10.7625 13.6875 10.3125C13.2375 9.8625 12.6375 9.6 12 9.6ZM4.08755 6.45L8.17505 10.5375C8.36255 10.0125 8.70005 9.525 9.11255 9.1125C9.52505 8.7 10.0125 8.4 10.5375 8.175L6.45005 4.0875C6.00005 4.3875 5.58755 4.7625 5.17505 5.175C4.76255 5.5875 4.42505 6 4.08755 6.45ZM14.8875 9.1125C15.3 9.525 15.6 10.0125 15.825 10.5375L19.9125 6.45C19.6125 6 19.2375 5.5875 18.8251 5.175C18.4125 4.7625 18 4.425 17.55 4.0875L13.4625 8.175C13.9875 8.4 14.475 8.7 14.8875 9.1125ZM7.95005 3.225L12 7.275L16.05 3.225C14.8125 2.6625 13.425 2.325 12 2.325C10.575 2.325 9.22505 2.6625 7.95005 3.225Z"

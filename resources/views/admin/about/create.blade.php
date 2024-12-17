@@ -153,7 +153,18 @@
                                                     class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">
                                                     Jumlah Siswa
                                                 </label>
-                                                <input type="text" name="jumlah_siswa" required autofocus
+                                                <input type="number" name="jumlah_siswa" required autofocus
+                                                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
+                                            </div>
+                                        </div>
+
+                                        <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
+                                            <div class="mb-4">
+                                                <label for="jumlah_siswa"
+                                                    class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700">
+                                                    Jumlah Kelas
+                                                </label>
+                                                <input type="number" name="jumlah_kelas" required autofocus
                                                     class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-70 focus:outline-none" />
                                             </div>
                                         </div>
@@ -194,7 +205,7 @@
 
                                     <div class="flex items-center justify-end mt-4 z-200">
                                         <button type="submit"
-                                            class="px-3 py-3 font-bold text-white rounded-md bg-green-600">
+                                            class="px-3 py-3 font-bold text-white bg-green-600 rounded-md">
                                             Simpan
                                         </button>
                                     </div>

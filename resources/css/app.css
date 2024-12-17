@@ -12,3 +12,9 @@
     -webkit-background-clip: text;
     background: linear-gradient(90deg, #ffcc00 0%, #0466c8 100%);
 }
+
+.x-announcement {
+  background-image: url("/public/assets/images/thumbnails/bg-pengumuman.png");
+  background-size: cover;
+}
+

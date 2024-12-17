@@ -34,7 +34,8 @@ class StoreAboutRequest extends FormRequest
             'description' => 'required', 'string', 'max:255',
             'address' => 'required', 'string', 'max:255',
             'maps' => 'required', 'string', 'max:255',
-            'jumlah_siswa' => 'required', 'string', 'max:255',
+            'jumlah_siswa' => 'required', 'number', 'max:255',
+            'jumlah_kelas' => 'required', 'number', 'max:255',
             'phone' => 'required', 'string', 'max:255',
             'email' => 'required', 'email', 'max:255',
             'thumbnail' => 'required', 'image', 'mimes:png,jpg,jpeg,svg', 'max:10240'

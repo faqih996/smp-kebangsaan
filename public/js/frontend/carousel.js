@@ -5,6 +5,7 @@ const $carousel = $('.main-carousel').flickity({
     prevNextButtons: false,
     pageDots: false,
     wrapAround: true
+
 });
 
 $('.button--previous').on( 'click', function() {
