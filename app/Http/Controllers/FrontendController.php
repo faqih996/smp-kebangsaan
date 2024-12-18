@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Extracurricular;
 use App\Models\Facility;
+use App\Models\Gallery;
 use App\Models\Information;
 use App\Models\Promotion;
 use App\Models\SocialMedia;
@@ -50,6 +51,8 @@ class FrontendController extends Controller
         $promotions = Promotion::orderByDesc('id')->get();
         $promotion = Promotion::count();
 
+        $galleries = Gallery::where('is_active', 'active')->orderByDesc('id')->get();
+
         $contact = Contact::count();
         $categories = Category::count();
         $teachers = Teacher::count();
@@ -57,7 +60,7 @@ class FrontendController extends Controller
         $extracurriculars = Extracurricular::count();
 
         return view('frontend.index', compact('user', 'about', 'contacts', 'socmeds', 'articles', 'article', 'informations',
-            'featured_articles','promotions', 'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
+            'galleries', 'featured_articles', 'promotions', 'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
         ));
     }
 

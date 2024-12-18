@@ -14,8 +14,7 @@
                     <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(37,89,187,0.9)] absolute z-10">
                     </div>
 
-                    <div class="card-detail max-w-[1130px] w-full mx-auto flex justify-end pb-10 relative z-20">
-
+                    <div class="card-detail max-w-[1130px] w-full mx-auto flex flex-cols justify-end pb-10 relative z-20">
                         <div class="relative z-10 w-full text-center lg:mt-[250px] mt-[150px]">
                             <h1
                                 class="items-center gap-4 font-bold text-center text-white lg:text-heading-1 text-heading-3">
@@ -210,88 +209,7 @@
         </div>
     </section>
 
-    <!-- pengumuman section -->
-    {{-- <section id="Up-to-date" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] lg:mt-[70px] mt-[30px] px-4 lg:px-0">
-        <div class="flex items-center justify-between">
-            <div>
-                <h2 class="font-bold lg:text-heading-6 text-heading-8 leading-[39px]">
-                    Pengumuman
-                </h2>
-                <span class="flex flex-col font-normal lg:text-heading-9 text-heading-10">
-                    Informasi Kegiatan SMP Kebangsaan
-                </span>
-            </div>
-
-            <a href="categoryPage.html"
-                class="lg:text-heading-8 text-heading-11 rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-blue-90">
-                Selengkapnya
-            </a>
-        </div>
-
-        <div class="grid lg:grid-cols-3 lg:gap-[30px] gap-[10px]">
-            <a href="details.html" class="card-news">
-                <div
-                    class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-blue-90 transition-all duration-300 bg-white">
-                    <div
-                        class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-                        <p
-                            class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-                            SPORT
-                        </p>
-                        <img src="assets/images/thumbnails/th-cyclist.png" class="object-cover w-full h-full"
-                            alt="thumbnail" />
-                    </div>
-                    <div class="card-info flex flex-col gap-[6px]">
-                        <h3 class="font-bold text-lg leading-[27px]">
-                            Bersepeda dapat membuat diri menjadi lebih baik lagi
-                        </h3>
-                        <p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-                    </div>
-                </div>
-            </a>
-            <a href="details.html" class="card-news">
-                <div
-                    class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-blue-90 transition-all duration-300 bg-white">
-                    <div
-                        class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-                        <p
-                            class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-                            ENTERTAINMENT
-                        </p>
-                        <img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
-                            alt="thumbnail" />
-                    </div>
-                    <div class="card-info flex flex-col gap-[6px]">
-                        <h3 class="font-bold text-lg leading-[27px]">
-                            Beberapa artis ini merayakan ultah di tengah hutan raya
-                        </h3>
-                        <p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-                    </div>
-                </div>
-            </a>
-            <a href="details.html" class="card-news">
-                <div
-                    class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-blue-90 transition-all duration-300 bg-white">
-                    <div
-                        class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-                        <p
-                            class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-                            POLITIC
-                        </p>
-                        <img src="assets/images/thumbnails/th-demonstration.png" class="object-cover w-full h-full"
-                            alt="thumbnail" />
-                    </div>
-                    <div class="card-info flex flex-col gap-[6px]">
-                        <h3 class="font-bold text-lg leading-[27px]">
-                            Terjadi demo pada ibu kota jakarta membuat macet parah
-                        </h3>
-                        <p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section> --}}
-
+    {{-- information --}}
     <section class="w-full mt-28 lg:mt-[70px] x-announcement">
         <div class="container pb-16 pt-9 max-w-[1130px] mx-auto flex flex-col gap-[30px] px-4 lg:px-0">
             <div class="flex items-center justify-between mb-10">
@@ -318,7 +236,7 @@
 
             <div class="grid grid-cols-1 gap-6 md:grid-cols-4">
                 @forelse ($informations as $information)
-                    <div class="py-[18px] px-7 rounded-[20px] border border-xneutral-100 bg-white">
+                    <div class="py-[18px] px-7 rounded-[20px] border border-xneutral-100 bg-white shadow-md">
                         <p class="mb-4 text-xs font-semibold sm:text-sm text-xneutral-200">
                             {{ $information->category }}
                         </p>
@@ -349,12 +267,12 @@
                 <img src="{{ asset('/assets/images/education/hero_shape2.png') }}"
                     class="absolute right-[16%] top-[60%] md:right-[31px] md:top-[70%] lg:right-[16%] lg:top-[60%] animate-move-var z-10"
                     alt="">
-                <img src="./assets/images/education/hero_shape3.png"
+                <img src="{{ asset('/assets/images/education/hero_shape3.png') }}"
                     class="absolute right-[9%] top-[58%] md:right-[12%] lg:right-[9%] animate-move-hor z-10"
                     alt="">
-                <img src="./assets/images/education/hero_shape4.png"
+                <img src="{{ asset('/assets/images/education/hero_shape4.png') }}"
                     class="absolute left-1/2 bottom-[15%] md:left-[4%] lg:left-1/2 animate-spin-slow" alt="">
-                <img src="./assets/images/education/hero_shape5.png"
+                <img src="{{ asset('/assets/images/education/hero_shape5.png') }}"
                     class="absolute left-[53%] top-[41%] md:left-[9%] md:top-[43%] lg:left-[53%] animate-spin-slow"
                     alt="">
             </div>
@@ -424,32 +342,13 @@
                         class="my-10 leading-relaxed two-lines text-size-15 lg:text-base 2xl:text-lg text-contentColor 2xl:mb-30px dark:text-contentColor-dark">
                         {{ $promotion->subtitle }}
                     </p>
-                    <a href=""
+                    <a href="{{ url($promotion->link) }}" target="blank"
                         class="mt-10 text-white text-heading-10 p-3 font-semibold rounded-md bg-blue-50 transition-all duration-300 hover:shadow-[0_10px_20px_0_#bbdefb] w-fit">
                         Daftar Sekarang
                     </a>
                 </div>
             </div>
         @empty
-            <div class="relative lg:mr-10">
-                <div class="lg:w-[355px] lg:h-[488px] w-[255px] h-[288px] items-center mx-auto lg:mx-0">
-                    <img src="{{ Storage::url($promotion->thumbnail) }}" alt="icon" />
-                </div>
-            </div>
-
-            <div
-                class="flex flex-col text-center items-center justify-center gap-[30px] lg:pl-[90px] py-[50px] lg:py-0 lg:mt-4">
-                <h2 class="font-bold lg:text-heading-4 text-heading-5 two-lines">
-                    {{ $promotion->title }}
-                </h2>
-                <p class="lg:text-heading-4 text-heading-5 two-lines">
-                    {{ $promotion->subtitle }}
-                </p>
-                <a href="{{ url($promotion->link) }}" target="blank"
-                    class="text-white text-heading-10 font-semibold rounded-[30px] lg:p-[16px_32px] p-[14px_26px] bg-blue-50 transition-all duration-300 hover:shadow-[0_10px_20px_0_#bbdefb] w-fit">
-                    Daftar Sekarang
-                </a>
-            </div>
         @endforelse
     </section>
 
@@ -541,89 +440,15 @@
         </div>
 
         <div class="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-4 lg:grid-cols-3">
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
 
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
+            @forelse ($galleries as $gallery)
+                <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96">
+                    <img src="{{ Storage::url($gallery->thumbnail) }}" alt="">
                 </div>
-            </div>
+            @empty
+                <p>Belum ada data.</p>
+            @endforelse
 
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
