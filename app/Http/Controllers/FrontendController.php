@@ -59,14 +59,22 @@ class FrontendController extends Controller
         $facilities = Facility::count();
         $extracurriculars = Extracurricular::count();
 
-        return view('frontend.index', compact('user', 'about', 'contacts', 'socmeds', 'articles', 'article', 'informations',
+        return view('frontend.index', compact('user',
+            'about', 'contacts', 'socmeds',
+            'promotion', 'articles', 'article', 'informations',
             'galleries', 'featured_articles', 'promotions', 'extracurriculars', 'carousels', 'information', 'contact', 'categories', 'article', 'user', 'information', 'teachers', 'facilities', 'promotions'
         ));
     }
 
     public function about()
     {
-        return view('frontend.about');
+        $user = Auth::user();
+        $about = About::first();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+        $contacts = Contact::orderByDesc('id')->get();
+
+        return view('frontend.about', compact('user', 'about', 'socmeds', 'contacts'));
     }
 
     public function visimision()

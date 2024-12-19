@@ -18,9 +18,7 @@
 
                     <!-- Title -->
                     <h1 class="mb-6 text-4xl font-bold md:text-6xl lg:mb-8"> Profil Sekolah </h1>
-                    <p class="text-sm text-justify text-gray-500 sm:text-xl"> Consectetur adipiscing elit duis tristique
-                        sollicitudin nibh. Augue mauris augue neque gravida in fermentum. Sapien pellentesque habitant morbi
-                        tristique pellentesque. </p>
+                    <p class="text-sm text-justify text-gray-500 sm:text-xl"> {{ $about->description }} </p>
 
                     <!-- Divider -->
                     <div class="w-full h-px mt-8 mb-8 bg-black"></div>
@@ -29,64 +27,62 @@
                             <div class="">
                                 <p class="font-semibold">Alamat</p>
                             </div>
-                            <p class="text-justify">Jalan Raya Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Accusamus ullam unde molestiae explicabo dolorum aspernatur deserunt consectetur distinctio!
-                                Quibusdam deserunt corporis officiis qui dicta distinctio? Aliquam labore error ipsa velit?
+                            <p class="text-justify">{{ $about->address }}
                             </p>
                         </div>
                         <div class="grid justify-between grid-cols-2 gap-x-5">
                             <div class="flex flex-col pb-3 ">
                                 <p class="font-semibold">NPSN</p>
-                                <p>20603255</p>
+                                <p>{{ $about->npsn }}</p>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <p class="font-semibold">Akreditasi</p>
-                                <p>A</p>
+                                <p>{{ $about->akreditasi }}</p>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <p class="font-semibold">No SK Akreditasi</p>
-                                <p>410/FLYMOTION/1993</p>
+                                <p>{{ $about->no_sk_akreditasi }}</p>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <p class="font-semibold">Status</p>
-                                <p>20603255</p>
+                                <p>{{ $about->status_sk_akreditasi }}</p>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <div class="">
                                     <p class="font-semibold ">Jenjang Pendidikan</p>
-                                    <p>SMP</p>
+                                    <p>{{ $about->jenjang_pendidikan }}</p>
                                 </div>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <div class="">
                                     <p class="font-semibold ">SK Pendirian</p>
-                                    <p>035/102/KEP/</p>
+                                    <p>{{ $about->sk_pendirian }}</p>
                                 </div>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <div class="">
                                     <p class="font-semibold ">Tanggal SK Pendirian</p>
-                                    <p>1991-07-06</p>
+                                    <p>{{ $about->tgl_sk_pendirian }}</p>
                                 </div>
                             </div>
 
                             <div class="flex flex-col pb-3">
                                 <div class="two-lines">
                                     <p class="font-semibold">SK Ijin Operasional</p>
-                                    <p class="two-lines">570/15/PIOSmk/</p>
+                                    <p class="two-lines">{{ $about->sk_operasional }}</p>
                                 </div>
                             </div>
 
                             <div class="flex flex-col pb-3 two-lines">
                                 <div class="two-lines ">
                                     <p class="font-semibold">Tanggal Ijin SK Operasional</p>
-                                    <p class="two-lines">570/15/PIOSmk/DPMPTS</p>
+                                    <p class="two-lines">{{ $about->tgl_sk_operasional }}</p>
                                 </div>
                             </div>
                         </div>

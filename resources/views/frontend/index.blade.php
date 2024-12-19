@@ -442,8 +442,25 @@
         <div class="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-4 lg:grid-cols-3">
 
             @forelse ($galleries as $gallery)
-                <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96">
-                    <img src="{{ Storage::url($gallery->thumbnail) }}" alt="">
+                <!-- card 1 -->
+                <div class="group">
+                    <div class="tab-content-wrapper" data-aos="fade-up">
+                        <div class="p-4 bg-white rounded-md shadow-md">
+                            <!-- card image -->
+                            <div class="relative mb-4 overflow-hidden">
+
+                                <img src="{{ storage::url($gallery->thumbnail) }}" alt=""
+                                    class="w-full transition-all duration-300 rounded-md group-hover:scale-110">
+
+                            </div>
+                            <!-- card content -->
+                            <div class="items-center">
+                                <p class="text-lg font-semibold text-center mb-10px font-hind">
+                                    {{ $gallery->name }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @empty
                 <p>Belum ada data.</p>
