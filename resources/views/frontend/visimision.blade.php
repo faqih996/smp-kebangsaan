@@ -10,53 +10,28 @@
             Visi
         </h1>
         <p class="text-xl leading-[45px] text-center font-semibold">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis
-            consectetur orci, ac viverra nunc laoreet in. Nullam vel neque vel felis
-            finibus consectetur. Nulla facilisi.
+            {{ $vision->name }}
         </p>
 
         <h1 class="text-4xl leading-[45px] font-bold text-center mt-16">
             Misi
         </h1>
 
-        <ol class="space-y-6">
-            <li class="flex text-base">
-                <span
-                    class=" bg-blue-90 mr-2.5 flex h-[26px] w-full max-w-[26px] items-center justify-center rounded text-base text-white">
-                    1
-                </span>
-                <div class="two-lines">
-                    Lorem ipsum dolor sit amet Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, optio!
+        @php
+            $alphabet = range('1', '2'); // Membuat array huruf dari A-Z
+        @endphp
+
+        @forelse ($missions as $index => $mission)
+            <div class="flex items-start w-full gap-4 p-4 border-b">
+                <span class="text-lg font-bold text-gray-600">{{ $alphabet[$index] ?? $index + 1 }}.</span>
+                <div class="flex-1">
+                    <p class="text-base font-semibold text-gray-800">{{ $mission->name }}</p>
                 </div>
-            </li>
-            <li class="flex text-base text-body-color">
-                <span
-                    class="bg-blue-90 mr-2.5 flex h-[26px] w-full max-w-[26px] items-center justify-center rounded text-base text-white">
-                    2
-                </span>
-                It is a long established fact reader
-            </li>
-            <li class="flex text-base text-body-color">
-                <span
-                    class="bg-blue-90 mr-2.5 flex h-[26px] w-full max-w-[26px] items-center justify-center rounded text-base text-white">
-                    3
-                </span>
-                The point of using Lorem Ipsum
-            </li>
-            <li class="flex text-base text-body-color">
-                <span
-                    class="bg-blue-90 mr-2.5 flex h-[26px] w-full max-w-[26px] items-center justify-center rounded text-base text-white">
-                    4
-                </span>
-                There are many variations of passages
-            </li>
-            <li class="flex text-base text-body-color">
-                <span
-                    class="bg-blue-90 mr-2.5 flex h-[26px] w-full max-w-[26px] items-center justify-center rounded text-base text-white">
-                    5
-                </span>
-                If you are going to use a of Lorem
-            </li>
-        </ol>
+            </div>
+        @empty
+            <div class="p-4 text-center text-gray-500">
+                <p>Belum ada data yang tersedia.</p>
+            </div>
+        @endforelse
     </section>
 @endsection

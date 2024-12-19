@@ -11,9 +11,12 @@ use App\Models\Extracurricular;
 use App\Models\Facility;
 use App\Models\Gallery;
 use App\Models\Information;
+use App\Models\Mision;
 use App\Models\Promotion;
 use App\Models\SocialMedia;
+use App\Models\Speach;
 use App\Models\Teacher;
+use App\Models\Vision;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,19 +75,31 @@ class FrontendController extends Controller
         $about = About::first();
 
         $socmeds = SocialMedia::orderByDesc('id')->get();
-        $contacts = Contact::orderByDesc('id')->get();
 
-        return view('frontend.about', compact('user', 'about', 'socmeds', 'contacts'));
+        return view('frontend.about', compact('user', 'about', 'socmeds'));
     }
 
     public function visimision()
     {
-        return view('frontend.visimision');
+        $user = Auth::user();
+        $about = About::first();
+        $vision = Vision::first();
+        $missions = Mision::orderBy('id', 'asc')->get();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.visimision', compact('about', 'socmeds', 'user', 'vision', 'missions'));
     }
 
     public function greeting()
     {
-        return view('frontend.greeting');
+        $user = Auth::user();
+        $about = About::first();
+        $greeting = Speach::first();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.greeting', compact('user', 'about', 'socmeds', 'greeting'));
     }
 
     public function teacher()
