@@ -104,31 +104,63 @@ class FrontendController extends Controller
 
     public function teacher()
     {
-        return view('frontend.teacher');
+        $user = Auth::user();
+        $about = About::first();
+        $teachers = Teacher::orderByDesc('id')->get();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.teacher', compact('user', 'about', 'socmeds', 'teachers'));
     }
 
     public function facility()
     {
-        return view('frontend.facility');
+        $user = Auth::user();
+        $about = About::first();
+        $facilities = Facility::orderByDesc('id')->get();
+
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.facility', compact('user', 'about', 'socmeds', 'facilities'));
     }
 
     public function extracurricular()
     {
-        return view('frontend.extracurricular');
+        $user = Auth::user();
+        $about = About::first();
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        $extracurriculars = Extracurricular::orderByDesc('id')->get();
+
+        return view('frontend.extracurricular', compact('user', 'about', 'socmeds', 'extracurriculars'));
     }
 
     public function information()
     {
-        return view('frontend.information');
+        $user = Auth::user();
+        $about = About::first();
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.information', compact('user', 'about', 'socmeds'));
     }
 
     public function gallery()
     {
-        return view('frontend.gallery');
+        $user = Auth::user();
+        $about = About::first();
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        $galleries = Gallery::orderByDesc('id')->get();
+
+        return view('frontend.gallery', compact('user', 'about', 'socmeds', 'galleries'));
     }
 
     public function article()
     {
-        return view('frontend.article');
+        $user = Auth::user();
+        $about = About::first();
+        $socmeds = SocialMedia::orderByDesc('id')->get();
+
+        return view('frontend.article', compact('user', 'about', 'socmeds'));
     }
 }

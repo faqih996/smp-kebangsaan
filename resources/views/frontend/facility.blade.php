@@ -11,44 +11,21 @@
         </div>
 
         <div class="grid grid-cols-3 gap-8 mt-8 lg:grid-cols-2">
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
+            @forelse ($facilities as $facility)
+                <div class="rounded-md hover:ring-2 hover:ring-blue-90">
+                    <img class="relative z-10 object-cover w-full rounded-md h-96"
+                        src="{{ Storage::url($facility->thumbnail) }}" alt="">
 
-                <div
-                    class="relative z-20 items-center max-w-lg p-4 mx-auto text-center rounded-md shadow -mt-14 backdrop-blur-sm bg-blue-70/60">
-                    <a href="#" class="items-center font-semibold text-center text-white">
-                        Ruang Osis
-                    </a>
+                    <div
+                        class="relative z-20 items-center max-w-lg p-4 mx-auto text-center rounded-md shadow -mt-14 backdrop-blur-sm bg-blue-70/60">
+                        <p class="items-center font-semibold text-center text-white">
+                            {{ $facility->thumbnail }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
-
-                <div
-                    class="relative z-20 items-center max-w-lg p-4 mx-auto text-center rounded-md shadow -mt-14 backdrop-blur-sm bg-blue-70/60">
-                    <a href="#" class="items-center font-semibold text-center text-white">
-                        Ruang Osis
-                    </a>
-                </div>
-            </div>
-
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
-
-                <div
-                    class="relative z-20 items-center max-w-lg p-4 mx-auto text-center rounded-md shadow -mt-14 backdrop-blur-sm bg-blue-70/60">
-                    <a href="#" class="items-center font-semibold text-center text-white">
-                        Ruang Osis
-                    </a>
-                </div>
-            </div>
+            @empty
+                <p>Belum ada data.</p>
+            @endforelse
         </div>
     </section>
 @endsection

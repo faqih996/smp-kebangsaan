@@ -302,8 +302,7 @@
                         <div class="relative z-0 tilt">
                             <!-- bannar image -->
                             <div class="flex flex-col items-center lg:items-end">
-                                <img class="text-center" src="{{ asset('assets/images/thumbnails/image1.png') }}"
-                                    alt="">
+                                <img class="text-center" src="{{ Storage::url($about->thumbnail) }}" alt="">
 
                                 <img class="absolute left-0 bottom-[-290px] md:left-[30px] lg:left-0"
                                     src="{{ asset('/assets/images/education/education__13.png') }}" alt="">

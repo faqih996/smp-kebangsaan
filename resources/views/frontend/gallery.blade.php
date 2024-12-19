@@ -15,89 +15,19 @@
         </div>
 
         <div class="grid grid-cols-1 gap-4 mt-8 xl:mt-12 xl:gap-4 lg:grid-cols-3">
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
+            @forelse ($galleries as $gallery)
+                <div class="flex items-end overflow-hidden text-center bg-cover rounded-lg h-96"
+                    style="background-image: url('{{ asset($gallery->thumbnail) }}');
+                ">
+                    <div class="w-full px-8 py-2 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
+                        <h2 class="text-xl font-semibold text-white">
+                            {{ $gallery->name }}
+                        </h2>
+                    </div>
                 </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
-
-            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96"
-                style="
-            background-image: url('https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-          ">
-                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-gray-800/60">
-                    <h2 class="mt-4 text-xl font-semibold text-white">
-                        Best website collections
-                    </h2>
-                    <p class="mt-1 text-lg text-white">
-                        Website
-                    </p>
-                </div>
-            </div>
+            @empty
+                <p>Belum ada data</p>
+            @endforelse
         </div>
     </section>
 @endsection

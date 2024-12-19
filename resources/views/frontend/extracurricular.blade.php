@@ -11,65 +11,28 @@
         </div>
 
         <div class="grid grid-cols-3 gap-8 mt-8 lg:grid-cols-2">
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
+            @forelse ($extracurriculars as $extracurricular)
+                <div class="rounded-md hover:ring-2 hover:ring-blue-90">
+                    <img class="relative z-10 object-cover w-full rounded-md h-96"
+                        src="{{ Storage::url($extracurricular->thumbnail1) }}" alt="">
 
-                <div class="relative z-20 items-center max-w-lg p-4 mx-auto -mt-20 text-center bg-white rounded-md shadow">
-                    <a href="#" class="items-center font-semibold text-center text-gray-800">
-                        Pencak Silat
-                    </a>
+                    <div
+                        class="relative z-20 items-center max-w-lg p-4 mx-auto text-center bg-white rounded-md shadow -mt-[17px]">
+                        <p href="#" class="items-center font-semibold text-center text-gray-800">
+                            {{ $extracurricular->name }}
+                        </p>
 
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Jadwal Latihan : Sabtu, 07:00 - 09:00
-                    </p>
+                        <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
+                            Jadwal Latihan : {{ $extracurricular->jadwal }}
+                        </p>
 
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Pembina : Faqih
-                    </p>
+                        <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
+                            Pembina : {{ $extracurricular->coach }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
-
-                <div class="relative z-20 items-center max-w-lg p-4 mx-auto -mt-20 text-center bg-white rounded-md shadow">
-                    <a href="#" class="items-center font-semibold text-center text-gray-800">
-                        Pencak Silat
-                    </a>
-
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Jadwal Latihan : Sabtu, 07:00 - 09:00
-                    </p>
-
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Pembina : Faqih
-                    </p>
-                </div>
-            </div>
-
-            <div class="rounded-md hover:ring-2 hover:ring-blue-90">
-                <img class="relative z-10 object-cover w-full rounded-md h-96"
-                    src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    alt="">
-
-                <div class="relative z-20 items-center max-w-lg p-4 mx-auto -mt-20 text-center bg-white rounded-md shadow">
-                    <a href="#" class="items-center font-semibold text-center text-gray-800">
-                        Pencak Silat
-                    </a>
-
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Jadwal Latihan : Sabtu, 07:00 - 09:00
-                    </p>
-
-                    <p class="mt-3 text-sm text-center text-gray-500 md:text-sm">
-                        Pembina : Faqih
-                    </p>
-                </div>
-            </div>
+            @empty
+            @endforelse
         </div>
     </section>
 @endsection

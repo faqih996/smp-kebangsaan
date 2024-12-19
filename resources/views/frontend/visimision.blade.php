@@ -9,9 +9,14 @@
         <h1 class="text-4xl leading-[45px] font-bold text-center">
             Visi
         </h1>
-        <p class="text-xl leading-[45px] text-center font-semibold">
-            {{ $vision->name }}
-        </p>
+
+        @if ($vision)
+            <p class="text-xl leading-[45px] text-center font-semibold">
+                {{ $vision->name }}
+            </p>
+        @else
+            <p>Belum ada data.</p>
+        @endif
 
         <h1 class="text-4xl leading-[45px] font-bold text-center mt-16">
             Misi
@@ -30,7 +35,7 @@
             </div>
         @empty
             <div class="p-4 text-center text-gray-500">
-                <p>Belum ada data yang tersedia.</p>
+                <p>Belum ada data.</p>
             </div>
         @endforelse
     </section>
